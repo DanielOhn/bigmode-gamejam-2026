@@ -1,47 +1,142 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcv474yrj0c7i"]
+[gd_scene load_steps=20 format=4 uid="uid://dcv474yrj0c7i"]
 
 [ext_resource type="PackedScene" uid="uid://b4tiocdxnssuc" path="res://object/player.tscn" id="1_2venv"]
+[ext_resource type="PackedScene" uid="uid://gnwmqfn4geim" path="res://object/fish.tscn" id="1_paw1w"]
+[ext_resource type="PackedScene" uid="uid://brl3f1hdpflm4" path="res://object/baby_seal.tscn" id="2_j6w7d"]
+[ext_resource type="PackedScene" uid="uid://c6talyuswmaih" path="res://object/safezone.tscn" id="3_x4b8f"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_paw1w"]
-noise_type = 2
-fractal_type = 3
-cellular_jitter = 1.27
-cellular_return_type = 6
-domain_warp_enabled = true
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_j6w7d"]
-noise = SubResource("FastNoiseLite_paw1w")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4b8f"]
-albedo_color = Color(0.7904357, 0.9568055, 1, 1)
-albedo_texture = SubResource("NoiseTexture2D_j6w7d")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_tmr53"]
-material = SubResource("StandardMaterial3D_x4b8f")
-size = Vector2(200, 200)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2venv"]
-data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100, -100, 0, -100, 100, 0, -100)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_paw1w"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_2venv"]
-size = Vector3(1, 5, 40)
+material = SubResource("StandardMaterial3D_paw1w")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_paw1w"]
-data = PackedVector3Array(-0.5, 2.5, 20, 0.5, 2.5, 20, -0.5, -2.5, 20, 0.5, 2.5, 20, 0.5, -2.5, 20, -0.5, -2.5, 20, 0.5, 2.5, -20, -0.5, 2.5, -20, 0.5, -2.5, -20, -0.5, 2.5, -20, -0.5, -2.5, -20, 0.5, -2.5, -20, 0.5, 2.5, 20, 0.5, 2.5, -20, 0.5, -2.5, 20, 0.5, 2.5, -20, 0.5, -2.5, -20, 0.5, -2.5, 20, -0.5, 2.5, -20, -0.5, 2.5, 20, -0.5, -2.5, -20, -0.5, 2.5, 20, -0.5, -2.5, 20, -0.5, -2.5, -20, 0.5, 2.5, 20, -0.5, 2.5, 20, 0.5, 2.5, -20, -0.5, 2.5, 20, -0.5, 2.5, -20, 0.5, 2.5, -20, -0.5, -2.5, 20, 0.5, -2.5, 20, -0.5, -2.5, -20, 0.5, -2.5, 20, 0.5, -2.5, -20, -0.5, -2.5, -20)
+[sub_resource type="BoxShape3D" id="BoxShape3D_paw1w"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_88ety"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_j6w7d"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="Sky" id="Sky_ahbqi"]
-sky_material = SubResource("ProceduralSkyMaterial_88ety")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sy5bm"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_color = Color(0.7171174, 0.9063355, 0.8620784, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mnsd4"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 53.43116, 2),
+"format": 34359742465,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAwAAAAQABAAAAAIAAwAEAAUABAACAAYABQAEAAYAAwAFAAcAAwAHAAEABQAGAAcAAQAIAAIAAgAJAAYAAgAIAAkABgAKAAcABgAJAAoABwALAAEAAQALAAgABwAKAAsADAAJAAgADQAKAAkADQAJAAwADgALAAoADgAKAA0ADwAIAAsADwALAA4ADAAIAA8AEAAOAA0AEQAMAA8AEgAPAA4AEQAPABIAEgAOABAAEwAMABEAEwARABIAEwANAAwAEwASABAAEAANABMA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AACAvwAAgL8AAIA/AACAvwAAgD8AAIC/AACAvwAAgD8AAIA/AACAvwAAgL8AAIC/AACAPwAAgL8AAIA/AACAPwAAgL8AAIC/AACAPwAAgD8AAIA/AACAPwAAgD8AAIC/AACAv4K5UUIAAIA/AACAP4K5UUIAAIA/AACAP4K5UUIAAIC/AACAv4K5UUIAAIC/GuppP4K5UUIa6mk/GuppP4K5UUIa6mm/Guppv4K5UUIa6mm/Guppv4K5UUIa6mk/GuppvwAAgD8a6mm/GuppPwAAgD8a6mk/GuppvwAAgD8a6mk/GuppPwAAgD8a6mm/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_s50ug"]
+resource_name = "map_Cube_002"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 53.43116, 2),
+"attribute_data": PackedByteArray("AADAPgAAgD8AACA/AABAPwAAID8AAIA/AADAPgAAQD8AACA/AACAPwAAID8AAEA/AADAPgAAQD8AACA/AAAAPwAAID8AAEA/AADAPgAAAD8AACA/AABAPwAAID8AAAA/AADAPgAAAD8AACA/AACAPgAAID8AAAA/AADAPgAAgD4AACA/AAAAPwAAID8AAIA+AADAPgAAgD4AACA/AAAAAAAAID8AAIA+AADAPgAAAAAAACA/AACAPgAAID8AAAAAAAAAPgAAAD8AAMA+AACAPgAAwD4AAAA/AAAAPgAAgD68wiI/iHr6PkI9XT96hYU+Qz1dP4h6+j68wiI/fIWFPkM9XT+Ievo+vMIiP4h6+j68wiI/iHr6PkM9XT+Ievo+Qj1dP3qFhT4AAGA/AAAAP0M9XT+Ievo+AAAgPwAAAD8AAGA/AACAPrzCIj+Ievo+vMIiP3yFhT4AACA/AACAPrzCIj+Ievo+vMIiP3yFhT68wiI/fIWFPrzCIj+Ievo+Qj1dP3qFhT5DPV0/iHr6PkM9XT+Ievo+Qj1dP3qFhT68wiI/fIWFPkI9XT96hYU+Qj1dP3qFhT68wiI/fIWFPg=="),
+"format": 34359742487,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAQAEAAIAAQAFAAQABgAHAAgABgAJAAcABwAKAAgABwALAAoADAANAA4ADAAPAA0ADQAQAA4ADQARABAAEgATABQAEgAVABMAEwAWABQAEwAXABYAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJgAlACcAJAAoACUAJgAnACkAKgAoACQAKQAnACsAKgArACgAKQArACoALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUA"),
+"material": SubResource("StandardMaterial3D_sy5bm"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 56,
+"vertex_data": PackedByteArray("AACAvwAAgL8AAIA/AACAvwAAgD8AAIC/AACAvwAAgD8AAIA/AACAvwAAgL8AAIC/AACAv4K5UUIAAIA/AACAv4K5UUIAAIC/AACAvwAAgL8AAIC/AACAPwAAgD8AAIC/AACAvwAAgD8AAIC/AACAPwAAgL8AAIC/AACAv4K5UUIAAIC/AACAP4K5UUIAAIC/AACAPwAAgL8AAIC/AACAPwAAgD8AAIA/AACAPwAAgD8AAIC/AACAPwAAgL8AAIA/AACAP4K5UUIAAIC/AACAP4K5UUIAAIA/AACAPwAAgL8AAIA/AACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAvwAAgL8AAIA/AACAP4K5UUIAAIA/AACAv4K5UUIAAIA/AACAvwAAgL8AAIC/AACAPwAAgL8AAIA/AACAPwAAgL8AAIC/AACAvwAAgL8AAIA/GuppPwAAgD8a6mm/GuppvwAAgD8a6mk/GuppvwAAgD8a6mm/GuppPwAAgD8a6mk/GuppvwAAgD8a6mm/GuppP4K5UUIa6mm/GuppPwAAgD8a6mm/Guppv4K5UUIa6mm/Guppv4K5UUIa6mk/AACAv4K5UUIAAIC/Guppv4K5UUIa6mm/AACAP4K5UUIAAIC/AACAv4K5UUIAAIA/GuppP4K5UUIa6mm/GuppP4K5UUIa6mk/AACAP4K5UUIAAIA/GuppPwAAgD8a6mm/GuppP4K5UUIa6mk/GuppPwAAgD8a6mk/GuppP4K5UUIa6mm/GuppvwAAgD8a6mk/Guppv4K5UUIa6mm/GuppvwAAgD8a6mm/Guppv4K5UUIa6mk/GuppPwAAgD8a6mk/Guppv4K5UUIa6mk/GuppvwAAgD8a6mk/GuppP4K5UUIa6mk/AAD/f/9///8AAP9//3///wAA/3//f///AAD/f/9///8AAP9/////vwAA/3////+///////9//////////3//////////f/////////9/////////////P/////////8/////f/9///////9//3///////3//f///////f/9///////9/////v////3////+//3//f/9/////f/9//3////9//3//f////3//f/9/////f/9/////P/9//3////8//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9//3////8//3//f////z//f/9/////P/9//3////8//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/////f////7////9/////v////3////+/////f////7//////////P/////////8//////////z//////////Pw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_mnsd4")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vv3rf"]
+data = PackedVector3Array(-1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 0.91372836, 1, -0.91372836, -0.91372836, 1, 0.91372836, -0.91372836, 1, -0.91372836, 0.91372836, 1, -0.91372836, 0.91372836, 1, 0.91372836, -0.91372836, 1, 0.91372836, 1, 1, -1, -1, 52.43116, -1, -1, 1, -1, 1, 1, -1, 1, 52.43116, -1, -1, 52.43116, -1, -1, 1, 1, 1, 52.43116, 1, 1, 1, 1, -1, 1, 1, -1, 52.43116, 1, 1, 52.43116, 1, -1, 1, -1, -1, 52.43116, 1, -1, 1, 1, -1, 1, -1, -1, 52.43116, -1, -1, 52.43116, 1, -0.91372836, 1, -0.91372836, 0.91372836, 52.43116, -0.91372836, 0.91372836, 1, -0.91372836, -0.91372836, 1, -0.91372836, -0.91372836, 52.43116, -0.91372836, 0.91372836, 52.43116, -0.91372836, -0.91372836, 52.43116, 0.91372836, -1, 52.43116, -1, -0.91372836, 52.43116, -0.91372836, -0.91372836, 52.43116, 0.91372836, -1, 52.43116, 1, -1, 52.43116, -1, -0.91372836, 52.43116, -0.91372836, 1, 52.43116, -1, 0.91372836, 52.43116, -0.91372836, -0.91372836, 52.43116, -0.91372836, -1, 52.43116, -1, 1, 52.43116, -1, 0.91372836, 52.43116, -0.91372836, 1, 52.43116, 1, 0.91372836, 52.43116, 0.91372836, 0.91372836, 52.43116, -0.91372836, 1, 52.43116, -1, 1, 52.43116, 1, 0.91372836, 52.43116, 0.91372836, -1, 52.43116, 1, -0.91372836, 52.43116, 0.91372836, 0.91372836, 52.43116, 0.91372836, 1, 52.43116, 1, -1, 52.43116, 1, 0.91372836, 1, -0.91372836, 0.91372836, 52.43116, 0.91372836, 0.91372836, 1, 0.91372836, 0.91372836, 1, -0.91372836, 0.91372836, 52.43116, -0.91372836, 0.91372836, 52.43116, 0.91372836, -0.91372836, 1, 0.91372836, -0.91372836, 52.43116, -0.91372836, -0.91372836, 1, -0.91372836, -0.91372836, 1, 0.91372836, -0.91372836, 52.43116, 0.91372836, -0.91372836, 52.43116, -0.91372836, 1, 1, 1, 1, 52.43116, -1, 1, 1, -1, 1, 1, 1, 1, 52.43116, 1, 1, 52.43116, -1, 0.91372836, 1, 0.91372836, -0.91372836, 52.43116, 0.91372836, -0.91372836, 1, 0.91372836, 0.91372836, 1, 0.91372836, 0.91372836, 52.43116, 0.91372836, -0.91372836, 52.43116, 0.91372836)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x4b8f"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tmr53"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_paw1w"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j6w7d"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2venv"]
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_paw1w"]
+sky_material = SubResource("ProceduralSkyMaterial_2venv")
 
 [sub_resource type="Environment" id="Environment_7gix3"]
 background_mode = 2
 background_energy_multiplier = 2.0
-sky = SubResource("Sky_ahbqi")
+sky = SubResource("Sky_paw1w")
+fog_mode = 1
+fog_density = 1.0
 
 [node name="TestLevel" type="Node3D"]
 
-[node name="DebugUI" type="Control" parent="."]
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Box" type="StaticBody3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -10)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Box"]
+mesh = SubResource("BoxMesh_2venv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Map/Box"]
+shape = SubResource("BoxShape3D_paw1w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Box"]
+shape = SubResource("ConcavePolygonShape3D_j6w7d")
+
+[node name="Fish" parent="Map" instance=ExtResource("1_paw1w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.170211, 0.39777064, -10.110542)
+
+[node name="BabySeals" type="Node3D" parent="Map"]
+
+[node name="BabySeal" parent="Map/BabySeals" instance=ExtResource("2_j6w7d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0180078, 0.5, -4)
+
+[node name="BabySeal2" parent="Map/BabySeals" instance=ExtResource("2_j6w7d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0180078, 0.5, -17.456873)
+
+[node name="BabySeal3" parent="Map/BabySeals" instance=ExtResource("2_j6w7d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.55746, 0.5, -4)
+
+[node name="BabySeal4" parent="Map/BabySeals" instance=ExtResource("2_j6w7d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.931782, 0.5, -32.061028)
+
+[node name="Safezone" parent="Map" instance=ExtResource("3_x4b8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0.1, 45)
+
+[node name="map" type="Node3D" parent="Map"]
+
+[node name="Cube" type="MeshInstance3D" parent="Map/map"]
+transform = Transform3D(100, 0, 0, 0, 0.1, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("ArrayMesh_s50ug")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/map/Cube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/map/Cube/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_vv3rf")
+
+[node name="Player" parent="." instance=ExtResource("1_2venv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="DebugUI" type="Control" parent="Player"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,87 +144,67 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DebugUI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Player/DebugUI"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="PowerDisplay" type="HBoxContainer" parent="DebugUI/VBoxContainer"]
+[node name="VelocityDisplay" type="HBoxContainer" parent="Player/DebugUI/VBoxContainer"]
 layout_mode = 2
 
-[node name="PowerLabel" type="Label" parent="DebugUI/VBoxContainer/PowerDisplay"]
-layout_mode = 2
-text = "Power:"
-
-[node name="PowerUpdate" type="Label" parent="DebugUI/VBoxContainer/PowerDisplay"]
-layout_mode = 2
-text = "0"
-
-[node name="VelocityDisplay" type="HBoxContainer" parent="DebugUI/VBoxContainer"]
-layout_mode = 2
-
-[node name="VelocityLabel" type="Label" parent="DebugUI/VBoxContainer/VelocityDisplay"]
+[node name="VelocityLabel" type="Label" parent="Player/DebugUI/VBoxContainer/VelocityDisplay"]
 layout_mode = 2
 text = "Velocity:"
+label_settings = SubResource("LabelSettings_x4b8f")
 
-[node name="VelocityUpdate" type="Label" parent="DebugUI/VBoxContainer/VelocityDisplay"]
+[node name="VelocityUpdate" type="Label" parent="Player/DebugUI/VBoxContainer/VelocityDisplay"]
 layout_mode = 2
 text = "0"
+label_settings = SubResource("LabelSettings_tmr53")
 
-[node name="Map" type="Node3D" parent="."]
+[node name="PowerDisplay" type="HBoxContainer" parent="Player/DebugUI/VBoxContainer"]
+layout_mode = 2
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Map"]
+[node name="PowerLabel" type="Label" parent="Player/DebugUI/VBoxContainer/PowerDisplay"]
+layout_mode = 2
+text = "Power:"
+label_settings = SubResource("LabelSettings_paw1w")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/StaticBody3D"]
-mesh = SubResource("PlaneMesh_tmr53")
+[node name="PowerUpdate" type="Label" parent="Player/DebugUI/VBoxContainer/PowerDisplay"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_j6w7d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_2venv")
+[node name="ScoreDisplay" type="HBoxContainer" parent="Player/DebugUI/VBoxContainer"]
+layout_mode = 2
 
-[node name="Wall" type="StaticBody3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, -9.424304, 0)
+[node name="ScoreLabel" type="Label" parent="Player/DebugUI/VBoxContainer/ScoreDisplay"]
+layout_mode = 2
+text = "Fish:"
+label_settings = SubResource("LabelSettings_x4b8f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Wall"]
-mesh = SubResource("BoxMesh_2venv")
+[node name="ScoreUpdate" type="Label" parent="Player/DebugUI/VBoxContainer/ScoreDisplay"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_tmr53")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Wall"]
-shape = SubResource("ConcavePolygonShape3D_paw1w")
+[node name="SealDisplay" type="HBoxContainer" parent="Player/DebugUI/VBoxContainer"]
+layout_mode = 2
 
-[node name="Wall2" type="StaticBody3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5, -9.424304, 0)
+[node name="SealLabel" type="Label" parent="Player/DebugUI/VBoxContainer/SealDisplay"]
+layout_mode = 2
+text = "Seals Saved:"
+label_settings = SubResource("LabelSettings_x4b8f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Wall2"]
-mesh = SubResource("BoxMesh_2venv")
-skeleton = NodePath("../../Wall2")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Wall2"]
-shape = SubResource("ConcavePolygonShape3D_paw1w")
-
-[node name="Wall3" type="StaticBody3D" parent="Map"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -9.424304, 20.5)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Wall3"]
-mesh = SubResource("BoxMesh_2venv")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Wall3"]
-shape = SubResource("ConcavePolygonShape3D_paw1w")
-
-[node name="Wall4" type="StaticBody3D" parent="Map"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -9.424304, -20.5)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Wall4"]
-mesh = SubResource("BoxMesh_2venv")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Wall4"]
-shape = SubResource("ConcavePolygonShape3D_paw1w")
-
-[node name="Camera3D" type="Camera3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 25, 0)
-current = true
-fov = 90.0
+[node name="SealUpdate" type="Label" parent="Player/DebugUI/VBoxContainer/SealDisplay"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_tmr53")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7gix3")
 
-[node name="Player" parent="." instance=ExtResource("1_2venv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.5821161, 0.8099091, -0.07202751, 0.34478495, 0.326092, 0.8802202, 0.7363858, 0.48755628, -0.46906778, 46.167133, 54.244904, -10.09273)
+light_energy = 0.1
+shadow_enabled = true

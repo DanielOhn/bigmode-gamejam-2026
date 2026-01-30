@@ -1,32 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4tiocdxnssuc"]
+[gd_scene load_steps=4 format=3 uid="uid://b4tiocdxnssuc"]
 
 [ext_resource type="Script" uid="uid://bajloardwmsle" path="res://scripts/player.gd" id="1_5amv0"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5amv0"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_srnac"]
-material = SubResource("StandardMaterial3D_5amv0")
-
-[sub_resource type="BoxMesh" id="BoxMesh_5amv0"]
-size = Vector3(0.5, 0.5, 0.2)
+[ext_resource type="PackedScene" uid="uid://ckrccb7xjf3rw" path="res://3d models/seal.blend" id="2_o1wbr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5amv0"]
+size = Vector3(1, 0.5, 1.2)
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_5amv0")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_srnac")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5650859)
-mesh = SubResource("BoxMesh_5amv0")
-skeleton = NodePath("../..")
+[node name="seal" parent="." instance=ExtResource("2_o1wbr")]
+transform = Transform3D(-1.7484556e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.7484556e-08, -0.045890868, -0.12410942, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.11604214)
 shape = SubResource("BoxShape3D_5amv0")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.087155804, 0.9961947, 0, -0.9961947, 0.087155804, 0, 18, 2)
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 0, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+spring_length = 8.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
 current = true
-fov = 90.0

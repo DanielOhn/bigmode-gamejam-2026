@@ -1,14 +1,23 @@
 extends CharacterBody3D
 
+class_name Player
+
 @export var MOVE_SPEED: float = 5.0
-@export var SLIDE_SPEED: float = .01
+@export var SLIDE_SPEED: float = .02
 
 const JUMP_VELOCITY: float = 4.5
 
 @export var POWER: float = 0
+@export var POWER_GAIN: float = 10
+@export var ROTATION_SPEED: float = 1.5
 
-@onready var power_display: HBoxContainer = get_tree().root.get_child(0).find_child("DebugUI").find_child("VBoxContainer").find_child("PowerDisplay")
-@onready var velocity_display: HBoxContainer = get_tree().root.get_child(0).find_child("DebugUI").find_child("VBoxContainer").find_child("VelocityDisplay")
+@export var FISH_SCORE: int = 0
+@export var SEALS_SAVED: int = 0
+
+@onready var power_display: HBoxContainer = find_child("DebugUI").find_child("VBoxContainer").find_child("PowerDisplay")
+@onready var velocity_display: HBoxContainer = find_child("DebugUI").find_child("VBoxContainer").find_child("VelocityDisplay")
+@onready var score_display: HBoxContainer = find_child("DebugUI").find_child("VBoxContainer").find_child("ScoreDisplay")
+@onready var seal_display: HBoxContainer = find_child("DebugUI").find_child("VBoxContainer").find_child("SealDisplay")
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -36,6 +45,8 @@ func _physics_process(delta):
 func display_labels():
 	power_display.find_child("PowerUpdate").text = str(POWER)
 	velocity_display.find_child("VelocityUpdate").text = str(velocity)
+	score_display.find_child("ScoreUpdate").text = str(FISH_SCORE)
+	seal_display.find_child("SealUpdate").text = str(SEALS_SAVED)
 
 func regular_movement():
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -70,7 +81,7 @@ func power_movement(delta):
 	var direction: Vector3 = Vector3.ZERO
 	 
 	if Input.is_action_pressed("ui_accept"):
-		POWER += 5 * delta
+		POWER += POWER_GAIN * delta
 		POWER = clamp(POWER, 0, 100)
 		
 	if Input.is_action_just_released("ui_accept"):
@@ -85,8 +96,7 @@ func power_movement(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SLIDE_SPEED)
 		velocity.z = move_toward(velocity.z, 0, SLIDE_SPEED)
-	
-	
+		
 	move_and_slide()
 
 func power_movement_zero_velocity(delta):
@@ -114,6 +124,6 @@ func power_movement_zero_velocity(delta):
 
 func player_rotation(delta):
 	if Input.is_action_pressed("ui_right"):
-		rotation.y -= 2 * delta
+		rotation.y -= ROTATION_SPEED * delta
 	if Input.is_action_pressed("ui_left"):
-		rotation.y += 2 * delta
+		rotation.y += ROTATION_SPEED * delta
