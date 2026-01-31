@@ -1,7 +1,5 @@
 extends Area3D
 
-var mesh: MeshInstance3D = find_child("MeshInstance3D")
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	rotation.y += 1 * delta

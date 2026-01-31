@@ -1,24 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://gnwmqfn4geim"]
+[gd_scene load_steps=4 format=3 uid="uid://gnwmqfn4geim"]
 
 [ext_resource type="Script" uid="uid://b6hu8fsd1cing" path="res://scripts/fish.gd" id="1_u8y5w"]
+[ext_resource type="PackedScene" uid="uid://bpbtxx5rg5vjx" path="res://3d models/fish.blend" id="2_xsqkt"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8y5w"]
-albedo_color = Color(0.9825044, 0.6253924, 0.4166397, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_u8y5w"]
-material = SubResource("StandardMaterial3D_u8y5w")
-radius = 0.6
-height = 0.5
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_u8y5w"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tdk5s"]
 
 [node name="Fish" type="Area3D"]
 script = ExtResource("1_u8y5w")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_u8y5w")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_u8y5w")
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_tdk5s")
+
+[node name="fish" parent="." instance=ExtResource("2_xsqkt")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.051033497, -0.1255812, 0.36675513)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="fish"]
