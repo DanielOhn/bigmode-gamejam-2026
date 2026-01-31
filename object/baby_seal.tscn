@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://brl3f1hdpflm4"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wug66"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_wug66"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_k7aaf"]
+
+[node name="BabySeal" type="RigidBody3D" groups=["BabySeal"]]
+collision_layer = 2
+collision_mask = 3
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_wug66")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_wug66")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_k7aaf")
