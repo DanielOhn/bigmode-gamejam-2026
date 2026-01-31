@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cot2h3wt6lg00"]
+
+[ext_resource type="PackedScene" uid="uid://cip4cpmaa0d1a" path="res://3d models/orca.glb" id="1_1nd22"]
+[ext_resource type="Script" uid="uid://q87m600g5rpb" path="res://scripts/orca.gd" id="1_h6s35"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h6s35"]
+radius = 1.0
+height = 4.5
+
+[node name="Orca" type="Area3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+script = ExtResource("1_h6s35")
+
+[node name="orca" parent="." instance=ExtResource("1_1nd22")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_h6s35")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
