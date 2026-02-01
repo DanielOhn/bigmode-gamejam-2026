@@ -17,7 +17,7 @@ const JUMP_VELOCITY: float = 4.5
 # Add Hunger to the player, fish replenish it
 # 3 Different Color Fish: Blue, Red, Gold
 @export var HUNGER_METER: float = 100.0
-@export var HUNGER_DRAIN: float = 2.5
+@export var HUNGER_DRAIN: float = 1
 
 
 @onready var power_display: HBoxContainer = find_child("DebugUI").find_child("VBoxContainer").find_child("PowerDisplay")
