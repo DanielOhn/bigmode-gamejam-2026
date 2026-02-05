@@ -1,0 +1,2411 @@
+[gd_scene load_steps=15 format=3 uid="uid://dtdokffv3lqev"]
+
+[ext_resource type="PackedScene" uid="uid://dd3nw8ih6no0l" path="res://object/ice.tscn" id="1_8kifc"]
+[ext_resource type="PackedScene" uid="uid://clypewhhgje6f" path="res://object/icerberg_1.tscn" id="2_f8osl"]
+[ext_resource type="PackedScene" uid="uid://ddn5vbd6ee54y" path="res://object/iceberg_2.tscn" id="3_xcolr"]
+[ext_resource type="PackedScene" uid="uid://b4tiocdxnssuc" path="res://object/player.tscn" id="4_f8osl"]
+[ext_resource type="PackedScene" uid="uid://cot2h3wt6lg00" path="res://object/orca.tscn" id="4_w8tjw"]
+[ext_resource type="PackedScene" uid="uid://ka4mtulwn6s7" path="res://3d models/ramp.blend" id="5_xcolr"]
+[ext_resource type="Script" uid="uid://b5k5dd4swiuum" path="res://scripts/safezone.gd" id="6_4j766"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1vj1o"]
+size = Vector2(100, 500)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ryo7x"]
+data = PackedVector3Array(50, 0, 250, -50, 0, 250, 50, 0, -250, -50, 0, 250, -50, 0, -250, 50, 0, -250)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j6w7d"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x4b8f"]
+size = Vector3(10, 1, 500)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w8tjw"]
+
+[sub_resource type="Sky" id="Sky_4j766"]
+sky_material = SubResource("ProceduralSkyMaterial_w8tjw")
+
+[sub_resource type="Environment" id="Environment_1vj1o"]
+background_mode = 2
+sky = SubResource("Sky_4j766")
+
+[node name="SealySlide" type="Node3D"]
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Ice" parent="Map" instance=ExtResource("1_8kifc")]
+
+[node name="Ice2" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="Ice3" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="Ice4" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
+
+[node name="Ice5" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
+
+[node name="Ice6" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 48)
+
+[node name="Ice7" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36)
+
+[node name="Ice8" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -48)
+
+[node name="Ice9" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24)
+
+[node name="Ice10" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="Ice11" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -12)
+
+[node name="Ice12" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="Ice13" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 36)
+
+[node name="Ice14" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 24)
+
+[node name="Ice15" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 48)
+
+[node name="Ice16" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -36)
+
+[node name="Ice17" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -48)
+
+[node name="Ice18" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -24)
+
+[node name="Ice19" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+
+[node name="Ice20" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -12)
+
+[node name="Ice21" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 12)
+
+[node name="Ice22" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 36)
+
+[node name="Ice23" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 24)
+
+[node name="Ice24" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 48)
+
+[node name="Ice25" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -36)
+
+[node name="Ice26" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -48)
+
+[node name="Ice27" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -24)
+
+[node name="Ice28" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+
+[node name="Ice29" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)
+
+[node name="Ice30" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 12)
+
+[node name="Ice31" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 36)
+
+[node name="Ice32" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 24)
+
+[node name="Ice33" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 48)
+
+[node name="Ice34" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -36)
+
+[node name="Ice35" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -48)
+
+[node name="Ice36" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -24)
+
+[node name="Ice37" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0)
+
+[node name="Ice38" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -12)
+
+[node name="Ice39" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 12)
+
+[node name="Ice40" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 36)
+
+[node name="Ice41" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 24)
+
+[node name="Ice42" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 48)
+
+[node name="Ice43" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -36)
+
+[node name="Ice44" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -48)
+
+[node name="Ice45" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -24)
+
+[node name="Ice46" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 0)
+
+[node name="Ice47" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -12)
+
+[node name="Ice48" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 12)
+
+[node name="Ice49" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 36)
+
+[node name="Ice50" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 24)
+
+[node name="Ice51" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 48)
+
+[node name="Ice52" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -36)
+
+[node name="Ice53" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -48)
+
+[node name="Ice54" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -24)
+
+[node name="Ice55" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 0)
+
+[node name="Ice56" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -12)
+
+[node name="Ice57" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 12)
+
+[node name="Ice58" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 36)
+
+[node name="Ice59" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 24)
+
+[node name="Ice60" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 48)
+
+[node name="Ice61" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -36)
+
+[node name="Ice62" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -48)
+
+[node name="Ice63" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -24)
+
+[node name="Ice64" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 0)
+
+[node name="Ice65" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -12)
+
+[node name="Ice66" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 12)
+
+[node name="Ice67" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 36)
+
+[node name="Ice68" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 24)
+
+[node name="Ice69" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 48)
+
+[node name="Ice70" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -36)
+
+[node name="Ice71" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -48)
+
+[node name="Ice72" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -24)
+
+[node name="Ice73" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 0)
+
+[node name="Ice74" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -12)
+
+[node name="Ice75" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 12)
+
+[node name="Ice76" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 36)
+
+[node name="Ice77" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 24)
+
+[node name="Ice78" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 48)
+
+[node name="Ice79" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -36)
+
+[node name="Ice80" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -48)
+
+[node name="Ice81" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -24)
+
+[node name="Ice82" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 0)
+
+[node name="Ice83" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -12)
+
+[node name="Ice84" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 12)
+
+[node name="Ice85" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 36)
+
+[node name="Ice86" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 24)
+
+[node name="Ice87" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 48)
+
+[node name="Ice88" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -36)
+
+[node name="Ice89" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -48)
+
+[node name="Ice90" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -24)
+
+[node name="Ice91" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 0)
+
+[node name="Ice92" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -12)
+
+[node name="Ice93" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 12)
+
+[node name="Ice94" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 36)
+
+[node name="Ice95" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 24)
+
+[node name="Ice96" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 48)
+
+[node name="Ice97" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -36)
+
+[node name="Ice98" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -48)
+
+[node name="Ice99" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -24)
+
+[node name="Ice100" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 0)
+
+[node name="Ice101" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, -12)
+
+[node name="Ice102" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 12)
+
+[node name="Ice103" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 36)
+
+[node name="Ice104" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 24)
+
+[node name="Ice105" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 48)
+
+[node name="Ice106" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, -36)
+
+[node name="Ice107" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, -48)
+
+[node name="Ice108" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, -24)
+
+[node name="Ice109" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 0)
+
+[node name="Ice110" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, -12)
+
+[node name="Ice111" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 12)
+
+[node name="Ice112" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 36)
+
+[node name="Ice113" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 24)
+
+[node name="Ice114" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 48)
+
+[node name="Ice115" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, -36)
+
+[node name="Ice116" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, -48)
+
+[node name="Ice117" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, -24)
+
+[node name="Ice118" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 0)
+
+[node name="Ice119" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, -12)
+
+[node name="Ice120" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 12)
+
+[node name="Ice121" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 36)
+
+[node name="Ice122" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 24)
+
+[node name="Ice123" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 48)
+
+[node name="Ice124" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, -36)
+
+[node name="Ice125" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, -48)
+
+[node name="Ice126" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, -24)
+
+[node name="Ice127" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 0)
+
+[node name="Ice128" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -12)
+
+[node name="Ice129" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 12)
+
+[node name="Ice130" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 36)
+
+[node name="Ice131" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 24)
+
+[node name="Ice132" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 48)
+
+[node name="Ice133" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -36)
+
+[node name="Ice134" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -48)
+
+[node name="Ice135" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -24)
+
+[node name="Ice136" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 0)
+
+[node name="Ice137" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, -12)
+
+[node name="Ice138" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 12)
+
+[node name="Ice139" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 36)
+
+[node name="Ice140" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 24)
+
+[node name="Ice141" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 48)
+
+[node name="Ice142" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, -36)
+
+[node name="Ice143" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, -48)
+
+[node name="Ice144" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, -24)
+
+[node name="Ice145" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 0)
+
+[node name="Ice146" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, -12)
+
+[node name="Ice147" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 12)
+
+[node name="Ice148" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 36)
+
+[node name="Ice149" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 24)
+
+[node name="Ice150" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 48)
+
+[node name="Ice151" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, -36)
+
+[node name="Ice152" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, -48)
+
+[node name="Ice153" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, -24)
+
+[node name="Ice154" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 0)
+
+[node name="Ice155" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -12)
+
+[node name="Ice156" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 12)
+
+[node name="Ice157" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 36)
+
+[node name="Ice158" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 24)
+
+[node name="Ice159" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 48)
+
+[node name="Ice160" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -36)
+
+[node name="Ice161" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -48)
+
+[node name="Ice162" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -24)
+
+[node name="Ice163" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 0)
+
+[node name="Ice164" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -12)
+
+[node name="Ice165" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 12)
+
+[node name="Ice166" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 36)
+
+[node name="Ice167" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 24)
+
+[node name="Ice168" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 48)
+
+[node name="Ice169" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -36)
+
+[node name="Ice170" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -48)
+
+[node name="Ice171" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -24)
+
+[node name="Ice172" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 0)
+
+[node name="Ice173" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -12)
+
+[node name="Ice174" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 12)
+
+[node name="Ice175" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 36)
+
+[node name="Ice176" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 24)
+
+[node name="Ice177" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 48)
+
+[node name="Ice178" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -36)
+
+[node name="Ice179" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -48)
+
+[node name="Ice180" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -24)
+
+[node name="Ice181" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
+
+[node name="Ice182" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -12)
+
+[node name="Ice183" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 12)
+
+[node name="Ice184" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 36)
+
+[node name="Ice185" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 24)
+
+[node name="Ice186" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 48)
+
+[node name="Ice187" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -36)
+
+[node name="Ice188" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -48)
+
+[node name="Ice189" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -24)
+
+[node name="Ice190" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -108)
+
+[node name="Ice191" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -120)
+
+[node name="Ice192" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -96)
+
+[node name="Ice193" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -72)
+
+[node name="Ice194" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -84)
+
+[node name="Ice195" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -60)
+
+[node name="Ice196" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -144)
+
+[node name="Ice197" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -156)
+
+[node name="Ice198" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -132)
+
+[node name="Ice199" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -108)
+
+[node name="Ice200" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -120)
+
+[node name="Ice201" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -96)
+
+[node name="Ice202" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -72)
+
+[node name="Ice203" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -84)
+
+[node name="Ice204" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -60)
+
+[node name="Ice205" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -144)
+
+[node name="Ice206" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -156)
+
+[node name="Ice207" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -132)
+
+[node name="Ice208" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -108)
+
+[node name="Ice209" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -120)
+
+[node name="Ice210" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -96)
+
+[node name="Ice211" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -72)
+
+[node name="Ice212" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -84)
+
+[node name="Ice213" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -60)
+
+[node name="Ice214" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -144)
+
+[node name="Ice215" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -156)
+
+[node name="Ice216" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -132)
+
+[node name="Ice217" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -108)
+
+[node name="Ice218" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -120)
+
+[node name="Ice219" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -96)
+
+[node name="Ice220" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -72)
+
+[node name="Ice221" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -84)
+
+[node name="Ice222" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -60)
+
+[node name="Ice223" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -144)
+
+[node name="Ice224" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -156)
+
+[node name="Ice225" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -132)
+
+[node name="Ice226" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -108)
+
+[node name="Ice227" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -120)
+
+[node name="Ice228" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -96)
+
+[node name="Ice229" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -72)
+
+[node name="Ice230" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -84)
+
+[node name="Ice231" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -60)
+
+[node name="Ice232" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -144)
+
+[node name="Ice233" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -156)
+
+[node name="Ice234" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -132)
+
+[node name="Ice235" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -108)
+
+[node name="Ice236" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -120)
+
+[node name="Ice237" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -96)
+
+[node name="Ice238" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -72)
+
+[node name="Ice239" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -84)
+
+[node name="Ice240" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -60)
+
+[node name="Ice241" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -144)
+
+[node name="Ice242" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -156)
+
+[node name="Ice243" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -132)
+
+[node name="Ice244" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -108)
+
+[node name="Ice245" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -120)
+
+[node name="Ice246" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -96)
+
+[node name="Ice247" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -72)
+
+[node name="Ice248" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -84)
+
+[node name="Ice249" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -60)
+
+[node name="Ice250" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -144)
+
+[node name="Ice251" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -156)
+
+[node name="Ice252" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -132)
+
+[node name="Ice253" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -108)
+
+[node name="Ice254" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -120)
+
+[node name="Ice255" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -96)
+
+[node name="Ice256" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -72)
+
+[node name="Ice257" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -84)
+
+[node name="Ice258" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -60)
+
+[node name="Ice259" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -144)
+
+[node name="Ice260" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -156)
+
+[node name="Ice261" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, -132)
+
+[node name="Ice262" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -108)
+
+[node name="Ice263" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -120)
+
+[node name="Ice264" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -96)
+
+[node name="Ice265" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -72)
+
+[node name="Ice266" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -84)
+
+[node name="Ice267" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -60)
+
+[node name="Ice268" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -144)
+
+[node name="Ice269" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -156)
+
+[node name="Ice270" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -132)
+
+[node name="Ice271" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -108)
+
+[node name="Ice272" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -120)
+
+[node name="Ice273" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -96)
+
+[node name="Ice274" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -72)
+
+[node name="Ice275" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -84)
+
+[node name="Ice276" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -60)
+
+[node name="Ice277" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -144)
+
+[node name="Ice278" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -156)
+
+[node name="Ice279" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -132)
+
+[node name="Ice280" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -108)
+
+[node name="Ice281" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -120)
+
+[node name="Ice282" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -96)
+
+[node name="Ice283" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -72)
+
+[node name="Ice284" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -84)
+
+[node name="Ice285" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -60)
+
+[node name="Ice286" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -144)
+
+[node name="Ice287" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -156)
+
+[node name="Ice288" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -132)
+
+[node name="Ice289" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, -108)
+
+[node name="Ice290" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, -120)
+
+[node name="Ice291" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, -96)
+
+[node name="Ice292" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, -72)
+
+[node name="Ice293" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, -84)
+
+[node name="Ice294" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, -60)
+
+[node name="Ice295" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, -144)
+
+[node name="Ice296" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, -156)
+
+[node name="Ice297" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, -132)
+
+[node name="Ice298" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, -108)
+
+[node name="Ice299" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, -120)
+
+[node name="Ice300" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, -96)
+
+[node name="Ice301" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, -72)
+
+[node name="Ice302" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, -84)
+
+[node name="Ice303" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, -60)
+
+[node name="Ice304" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, -144)
+
+[node name="Ice305" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, -156)
+
+[node name="Ice306" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, -132)
+
+[node name="Ice307" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, -108)
+
+[node name="Ice308" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, -120)
+
+[node name="Ice309" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, -96)
+
+[node name="Ice310" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, -72)
+
+[node name="Ice311" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, -84)
+
+[node name="Ice312" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, -60)
+
+[node name="Ice313" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, -144)
+
+[node name="Ice314" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, -156)
+
+[node name="Ice315" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, -132)
+
+[node name="Ice316" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -108)
+
+[node name="Ice317" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -120)
+
+[node name="Ice318" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -96)
+
+[node name="Ice319" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -72)
+
+[node name="Ice320" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -84)
+
+[node name="Ice321" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -60)
+
+[node name="Ice322" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -144)
+
+[node name="Ice323" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -156)
+
+[node name="Ice324" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -132)
+
+[node name="Ice325" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, -108)
+
+[node name="Ice326" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, -120)
+
+[node name="Ice327" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, -96)
+
+[node name="Ice328" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, -72)
+
+[node name="Ice329" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, -84)
+
+[node name="Ice330" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, -60)
+
+[node name="Ice331" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, -144)
+
+[node name="Ice332" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, -156)
+
+[node name="Ice333" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, -132)
+
+[node name="Ice334" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, -108)
+
+[node name="Ice335" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, -120)
+
+[node name="Ice336" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, -96)
+
+[node name="Ice337" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, -72)
+
+[node name="Ice338" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, -84)
+
+[node name="Ice339" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, -60)
+
+[node name="Ice340" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, -144)
+
+[node name="Ice341" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, -156)
+
+[node name="Ice342" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, -132)
+
+[node name="Ice343" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -108)
+
+[node name="Ice344" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -120)
+
+[node name="Ice345" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -96)
+
+[node name="Ice346" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -72)
+
+[node name="Ice347" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -84)
+
+[node name="Ice348" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -60)
+
+[node name="Ice349" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -144)
+
+[node name="Ice350" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -156)
+
+[node name="Ice351" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, -132)
+
+[node name="Ice352" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -108)
+
+[node name="Ice353" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -120)
+
+[node name="Ice354" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -96)
+
+[node name="Ice355" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -72)
+
+[node name="Ice356" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -84)
+
+[node name="Ice357" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -60)
+
+[node name="Ice358" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -144)
+
+[node name="Ice359" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -156)
+
+[node name="Ice360" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -132)
+
+[node name="Ice361" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -108)
+
+[node name="Ice362" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -120)
+
+[node name="Ice363" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -96)
+
+[node name="Ice364" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -72)
+
+[node name="Ice365" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -84)
+
+[node name="Ice366" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -60)
+
+[node name="Ice367" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -144)
+
+[node name="Ice368" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -156)
+
+[node name="Ice369" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -132)
+
+[node name="Ice370" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -108)
+
+[node name="Ice371" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -120)
+
+[node name="Ice372" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -96)
+
+[node name="Ice373" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -72)
+
+[node name="Ice374" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -84)
+
+[node name="Ice375" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -60)
+
+[node name="Ice376" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -144)
+
+[node name="Ice377" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -156)
+
+[node name="Ice378" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -132)
+
+[node name="Ice379" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 248)
+
+[node name="Ice380" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 236)
+
+[node name="Ice381" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 260)
+
+[node name="Ice382" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 284)
+
+[node name="Ice383" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 272)
+
+[node name="Ice384" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 296)
+
+[node name="Ice385" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 212)
+
+[node name="Ice386" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 200)
+
+[node name="Ice387" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 224)
+
+[node name="Ice388" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 248)
+
+[node name="Ice389" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 236)
+
+[node name="Ice390" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 260)
+
+[node name="Ice391" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 284)
+
+[node name="Ice392" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 272)
+
+[node name="Ice393" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 296)
+
+[node name="Ice394" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 212)
+
+[node name="Ice395" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 200)
+
+[node name="Ice396" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 224)
+
+[node name="Ice397" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 248)
+
+[node name="Ice398" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 236)
+
+[node name="Ice399" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 260)
+
+[node name="Ice400" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 284)
+
+[node name="Ice401" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 272)
+
+[node name="Ice402" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 296)
+
+[node name="Ice403" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 212)
+
+[node name="Ice404" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 200)
+
+[node name="Ice405" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 224)
+
+[node name="Ice406" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 248)
+
+[node name="Ice407" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 236)
+
+[node name="Ice408" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 260)
+
+[node name="Ice409" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 284)
+
+[node name="Ice410" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 272)
+
+[node name="Ice411" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 296)
+
+[node name="Ice412" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 212)
+
+[node name="Ice413" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 200)
+
+[node name="Ice414" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 224)
+
+[node name="Ice415" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 248)
+
+[node name="Ice416" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 236)
+
+[node name="Ice417" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 260)
+
+[node name="Ice418" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 284)
+
+[node name="Ice419" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 272)
+
+[node name="Ice420" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 296)
+
+[node name="Ice421" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 212)
+
+[node name="Ice422" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 200)
+
+[node name="Ice423" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 224)
+
+[node name="Ice424" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 248)
+
+[node name="Ice425" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 236)
+
+[node name="Ice426" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 260)
+
+[node name="Ice427" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 284)
+
+[node name="Ice428" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 272)
+
+[node name="Ice429" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 296)
+
+[node name="Ice430" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 212)
+
+[node name="Ice431" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 200)
+
+[node name="Ice432" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 224)
+
+[node name="Ice433" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 248)
+
+[node name="Ice434" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 236)
+
+[node name="Ice435" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 260)
+
+[node name="Ice436" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 284)
+
+[node name="Ice437" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 272)
+
+[node name="Ice438" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 296)
+
+[node name="Ice439" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 212)
+
+[node name="Ice440" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 200)
+
+[node name="Ice441" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 224)
+
+[node name="Ice442" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 248)
+
+[node name="Ice443" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 236)
+
+[node name="Ice444" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 260)
+
+[node name="Ice445" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 284)
+
+[node name="Ice446" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 272)
+
+[node name="Ice447" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 296)
+
+[node name="Ice448" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 212)
+
+[node name="Ice449" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 200)
+
+[node name="Ice450" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 224)
+
+[node name="Ice451" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 248)
+
+[node name="Ice452" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 236)
+
+[node name="Ice453" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 260)
+
+[node name="Ice454" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 284)
+
+[node name="Ice455" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 272)
+
+[node name="Ice456" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 296)
+
+[node name="Ice457" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 212)
+
+[node name="Ice458" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 200)
+
+[node name="Ice459" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 224)
+
+[node name="Ice460" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 248)
+
+[node name="Ice461" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 236)
+
+[node name="Ice462" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 260)
+
+[node name="Ice463" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 284)
+
+[node name="Ice464" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 272)
+
+[node name="Ice465" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 296)
+
+[node name="Ice466" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 212)
+
+[node name="Ice467" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 200)
+
+[node name="Ice468" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 224)
+
+[node name="Ice469" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 248)
+
+[node name="Ice470" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 236)
+
+[node name="Ice471" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 260)
+
+[node name="Ice472" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 284)
+
+[node name="Ice473" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 272)
+
+[node name="Ice474" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 296)
+
+[node name="Ice475" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 212)
+
+[node name="Ice476" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 200)
+
+[node name="Ice477" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 224)
+
+[node name="Ice478" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 248)
+
+[node name="Ice479" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 236)
+
+[node name="Ice480" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 260)
+
+[node name="Ice481" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 284)
+
+[node name="Ice482" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 272)
+
+[node name="Ice483" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 296)
+
+[node name="Ice484" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 212)
+
+[node name="Ice485" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 200)
+
+[node name="Ice486" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 224)
+
+[node name="Ice487" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 248)
+
+[node name="Ice488" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 236)
+
+[node name="Ice489" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 260)
+
+[node name="Ice490" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 284)
+
+[node name="Ice491" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 272)
+
+[node name="Ice492" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 296)
+
+[node name="Ice493" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 212)
+
+[node name="Ice494" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 200)
+
+[node name="Ice495" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 224)
+
+[node name="Ice496" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 248)
+
+[node name="Ice497" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 236)
+
+[node name="Ice498" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 260)
+
+[node name="Ice499" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 284)
+
+[node name="Ice500" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 272)
+
+[node name="Ice501" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 296)
+
+[node name="Ice502" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 212)
+
+[node name="Ice503" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 200)
+
+[node name="Ice504" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 224)
+
+[node name="Ice505" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 248)
+
+[node name="Ice506" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 236)
+
+[node name="Ice507" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 260)
+
+[node name="Ice508" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 284)
+
+[node name="Ice509" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 272)
+
+[node name="Ice510" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 296)
+
+[node name="Ice511" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 212)
+
+[node name="Ice512" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 200)
+
+[node name="Ice513" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 224)
+
+[node name="Ice514" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 248)
+
+[node name="Ice515" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 236)
+
+[node name="Ice516" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 260)
+
+[node name="Ice517" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 284)
+
+[node name="Ice518" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 272)
+
+[node name="Ice519" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 296)
+
+[node name="Ice520" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 212)
+
+[node name="Ice521" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 200)
+
+[node name="Ice522" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 224)
+
+[node name="Ice523" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 248)
+
+[node name="Ice524" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 236)
+
+[node name="Ice525" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 260)
+
+[node name="Ice526" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 284)
+
+[node name="Ice527" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 272)
+
+[node name="Ice528" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 296)
+
+[node name="Ice529" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 212)
+
+[node name="Ice530" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 200)
+
+[node name="Ice531" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 224)
+
+[node name="Ice532" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 248)
+
+[node name="Ice533" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 236)
+
+[node name="Ice534" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 260)
+
+[node name="Ice535" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 284)
+
+[node name="Ice536" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 272)
+
+[node name="Ice537" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 296)
+
+[node name="Ice538" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 212)
+
+[node name="Ice539" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 200)
+
+[node name="Ice540" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 224)
+
+[node name="Ice541" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 248)
+
+[node name="Ice542" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 236)
+
+[node name="Ice543" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 260)
+
+[node name="Ice544" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 284)
+
+[node name="Ice545" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 272)
+
+[node name="Ice546" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 296)
+
+[node name="Ice547" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 212)
+
+[node name="Ice548" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 200)
+
+[node name="Ice549" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 224)
+
+[node name="Ice550" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 248)
+
+[node name="Ice551" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 236)
+
+[node name="Ice552" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 260)
+
+[node name="Ice553" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 284)
+
+[node name="Ice554" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 272)
+
+[node name="Ice555" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 296)
+
+[node name="Ice556" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 212)
+
+[node name="Ice557" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 200)
+
+[node name="Ice558" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 224)
+
+[node name="Ice559" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 248)
+
+[node name="Ice560" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 236)
+
+[node name="Ice561" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 260)
+
+[node name="Ice562" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 284)
+
+[node name="Ice563" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 272)
+
+[node name="Ice564" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 296)
+
+[node name="Ice565" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 212)
+
+[node name="Ice566" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 200)
+
+[node name="Ice567" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 224)
+
+[node name="Ice568" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 140)
+
+[node name="Ice569" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 128)
+
+[node name="Ice570" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 152)
+
+[node name="Ice571" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 176)
+
+[node name="Ice572" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 164)
+
+[node name="Ice573" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 188)
+
+[node name="Ice574" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 104)
+
+[node name="Ice575" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 92)
+
+[node name="Ice576" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 116)
+
+[node name="Ice577" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 140)
+
+[node name="Ice578" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 128)
+
+[node name="Ice579" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 152)
+
+[node name="Ice580" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 176)
+
+[node name="Ice581" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 164)
+
+[node name="Ice582" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 188)
+
+[node name="Ice583" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 104)
+
+[node name="Ice584" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 92)
+
+[node name="Ice585" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 116)
+
+[node name="Ice586" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 140)
+
+[node name="Ice587" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 128)
+
+[node name="Ice588" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 152)
+
+[node name="Ice589" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 176)
+
+[node name="Ice590" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 164)
+
+[node name="Ice591" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 188)
+
+[node name="Ice592" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 104)
+
+[node name="Ice593" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 92)
+
+[node name="Ice594" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 116)
+
+[node name="Ice595" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 140)
+
+[node name="Ice596" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 128)
+
+[node name="Ice597" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 152)
+
+[node name="Ice598" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 176)
+
+[node name="Ice599" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 164)
+
+[node name="Ice600" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 188)
+
+[node name="Ice601" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 104)
+
+[node name="Ice602" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 92)
+
+[node name="Ice603" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 116)
+
+[node name="Ice604" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 140)
+
+[node name="Ice605" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 128)
+
+[node name="Ice606" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 152)
+
+[node name="Ice607" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 176)
+
+[node name="Ice608" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 164)
+
+[node name="Ice609" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 188)
+
+[node name="Ice610" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 104)
+
+[node name="Ice611" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 92)
+
+[node name="Ice612" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 116)
+
+[node name="Ice613" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 140)
+
+[node name="Ice614" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 128)
+
+[node name="Ice615" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 152)
+
+[node name="Ice616" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 176)
+
+[node name="Ice617" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 164)
+
+[node name="Ice618" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 188)
+
+[node name="Ice619" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 104)
+
+[node name="Ice620" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 92)
+
+[node name="Ice621" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 116)
+
+[node name="Ice622" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 140)
+
+[node name="Ice623" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 128)
+
+[node name="Ice624" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 152)
+
+[node name="Ice625" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 176)
+
+[node name="Ice626" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 164)
+
+[node name="Ice627" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 188)
+
+[node name="Ice628" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 104)
+
+[node name="Ice629" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 92)
+
+[node name="Ice630" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 116)
+
+[node name="Ice631" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 140)
+
+[node name="Ice632" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 128)
+
+[node name="Ice633" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 152)
+
+[node name="Ice634" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 176)
+
+[node name="Ice635" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 164)
+
+[node name="Ice636" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 188)
+
+[node name="Ice637" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 104)
+
+[node name="Ice638" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 92)
+
+[node name="Ice639" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 116)
+
+[node name="Ice640" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 140)
+
+[node name="Ice641" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 128)
+
+[node name="Ice642" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 152)
+
+[node name="Ice643" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 176)
+
+[node name="Ice644" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 164)
+
+[node name="Ice645" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 188)
+
+[node name="Ice646" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 104)
+
+[node name="Ice647" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 92)
+
+[node name="Ice648" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 116)
+
+[node name="Ice649" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 140)
+
+[node name="Ice650" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 128)
+
+[node name="Ice651" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 152)
+
+[node name="Ice652" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 176)
+
+[node name="Ice653" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 164)
+
+[node name="Ice654" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 188)
+
+[node name="Ice655" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 104)
+
+[node name="Ice656" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 92)
+
+[node name="Ice657" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 116)
+
+[node name="Ice658" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 140)
+
+[node name="Ice659" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 128)
+
+[node name="Ice660" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 152)
+
+[node name="Ice661" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 176)
+
+[node name="Ice662" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 164)
+
+[node name="Ice663" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 188)
+
+[node name="Ice664" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 104)
+
+[node name="Ice665" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 92)
+
+[node name="Ice666" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 116)
+
+[node name="Ice667" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 140)
+
+[node name="Ice668" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 128)
+
+[node name="Ice669" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 152)
+
+[node name="Ice670" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 176)
+
+[node name="Ice671" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 164)
+
+[node name="Ice672" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 188)
+
+[node name="Ice673" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 104)
+
+[node name="Ice674" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 92)
+
+[node name="Ice675" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 0, 116)
+
+[node name="Ice676" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 140)
+
+[node name="Ice677" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 128)
+
+[node name="Ice678" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 152)
+
+[node name="Ice679" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 176)
+
+[node name="Ice680" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 164)
+
+[node name="Ice681" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 188)
+
+[node name="Ice682" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 104)
+
+[node name="Ice683" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 92)
+
+[node name="Ice684" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 116)
+
+[node name="Ice685" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 140)
+
+[node name="Ice686" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 128)
+
+[node name="Ice687" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 152)
+
+[node name="Ice688" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 176)
+
+[node name="Ice689" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 164)
+
+[node name="Ice690" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 188)
+
+[node name="Ice691" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 104)
+
+[node name="Ice692" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 92)
+
+[node name="Ice693" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 116)
+
+[node name="Ice694" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 140)
+
+[node name="Ice695" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 128)
+
+[node name="Ice696" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 152)
+
+[node name="Ice697" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 176)
+
+[node name="Ice698" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 164)
+
+[node name="Ice699" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 188)
+
+[node name="Ice700" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 104)
+
+[node name="Ice701" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 92)
+
+[node name="Ice702" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 116)
+
+[node name="Ice703" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 140)
+
+[node name="Ice704" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 128)
+
+[node name="Ice705" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 152)
+
+[node name="Ice706" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 176)
+
+[node name="Ice707" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 164)
+
+[node name="Ice708" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 188)
+
+[node name="Ice709" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 104)
+
+[node name="Ice710" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 92)
+
+[node name="Ice711" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 116)
+
+[node name="Ice712" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 140)
+
+[node name="Ice713" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 128)
+
+[node name="Ice714" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 152)
+
+[node name="Ice715" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 176)
+
+[node name="Ice716" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 164)
+
+[node name="Ice717" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 188)
+
+[node name="Ice718" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 104)
+
+[node name="Ice719" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 92)
+
+[node name="Ice720" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 116)
+
+[node name="Ice721" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 140)
+
+[node name="Ice722" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 128)
+
+[node name="Ice723" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 152)
+
+[node name="Ice724" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 176)
+
+[node name="Ice725" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 164)
+
+[node name="Ice726" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 188)
+
+[node name="Ice727" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 104)
+
+[node name="Ice728" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 92)
+
+[node name="Ice729" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 116)
+
+[node name="Ice730" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 140)
+
+[node name="Ice731" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 128)
+
+[node name="Ice732" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 152)
+
+[node name="Ice733" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 176)
+
+[node name="Ice734" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 164)
+
+[node name="Ice735" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 188)
+
+[node name="Ice736" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 104)
+
+[node name="Ice737" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 92)
+
+[node name="Ice738" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 116)
+
+[node name="Ice739" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 140)
+
+[node name="Ice740" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 128)
+
+[node name="Ice741" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 152)
+
+[node name="Ice742" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 176)
+
+[node name="Ice743" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 164)
+
+[node name="Ice744" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 188)
+
+[node name="Ice745" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 104)
+
+[node name="Ice746" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 92)
+
+[node name="Ice747" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 116)
+
+[node name="Ice748" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 140)
+
+[node name="Ice749" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 128)
+
+[node name="Ice750" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 152)
+
+[node name="Ice751" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 176)
+
+[node name="Ice752" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 164)
+
+[node name="Ice753" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 188)
+
+[node name="Ice754" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 104)
+
+[node name="Ice755" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 92)
+
+[node name="Ice756" parent="Map" instance=ExtResource("1_8kifc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 116)
+
+[node name="MapObjects" type="Node3D" parent="."]
+
+[node name="Icerberg1" parent="MapObjects" instance=ExtResource("2_f8osl")]
+transform = Transform3D(1.473204, 0, 4.7780404, 0, 5, 0, -4.7780404, 0, 1.473204, 84, 2, -116)
+
+[node name="Iceberg2" parent="MapObjects" instance=ExtResource("3_xcolr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.4263382, -140)
+
+[node name="Iceberg3" parent="MapObjects" instance=ExtResource("3_xcolr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98, 0.4263382, 4)
+
+[node name="Iceberg4" parent="MapObjects" instance=ExtResource("3_xcolr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0.4263382, -7)
+
+[node name="Icerberg2" parent="MapObjects" instance=ExtResource("2_f8osl")]
+transform = Transform3D(4.982363, 0, 0.41960728, 0, 5.0000005, 0, -0.41960728, 0, 4.982363, -119.2812, 2.2619183, -60.743538)
+
+[node name="Icerberg3" parent="MapObjects" instance=ExtResource("2_f8osl")]
+transform = Transform3D(4.2647047, 0, 2.610037, 0, 5, 0, -2.610037, 0, 4.2647047, 56.160057, 2.2619183, -49.01202)
+
+[node name="Iceberg5" parent="MapObjects" instance=ExtResource("3_xcolr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2136, 1.001756, 267.90228)
+
+[node name="Iceberg6" parent="MapObjects" instance=ExtResource("3_xcolr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.81357, 1.0565147, 187.03464)
+
+[node name="Iceberg7" parent="MapObjects" instance=ExtResource("3_xcolr")]
+transform = Transform3D(0.09784345, 0, -0.9952018, 0, 1, 0, 0.9952018, 0, 0.09784345, 24.47142, 0.52542543, 142.95334)
+
+[node name="Iceberg8" parent="MapObjects" instance=ExtResource("3_xcolr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.270126, 0.52542543, 127.72922)
+
+[node name="Iceberg9" parent="MapObjects" instance=ExtResource("3_xcolr")]
+transform = Transform3D(0.38116723, 0, 0.9245061, 0, 1, 0, -0.9245061, 0, 0.38116723, -70.97714, 0.52542543, 238.81067)
+
+[node name="Iceberg10" parent="MapObjects" instance=ExtResource("3_xcolr")]
+transform = Transform3D(-0.19099742, 0, -0.9815905, 0, 1, 0, 0.9815905, 0, -0.19099742, -15.290596, -0.16977692, 131.55894)
+
+[node name="Icerberg4" parent="MapObjects" instance=ExtResource("2_f8osl")]
+transform = Transform3D(2.8893592, 0, 4.0806375, 0, 5, 0, -4.0806375, 0, 2.8893592, 21.929794, 2.2619336, 193.16205)
+
+[node name="Icerberg5" parent="MapObjects" instance=ExtResource("2_f8osl")]
+transform = Transform3D(-1.1897008, 0, -4.856399, 0, 5, 0, 4.856399, 0, -1.1897008, -76.3801, 1.2619183, 168.6474)
+
+[node name="Icerberg6" parent="MapObjects" instance=ExtResource("2_f8osl")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 47.68033, 2.2619183, 273.96198)
+
+[node name="Icerberg7" parent="MapObjects" instance=ExtResource("2_f8osl")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 92.928665, 2.2619183, 35.719276)
+
+[node name="Icerberg8" parent="MapObjects" instance=ExtResource("2_f8osl")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -53.696182, 1.5950406, -120.756966)
+
+[node name="Icerberg9" parent="MapObjects" instance=ExtResource("2_f8osl")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -21.906609, 1.5654995, -30.529251)
+
+[node name="Orca" parent="MapObjects" instance=ExtResource("4_w8tjw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -84, 0)
+
+[node name="ramp" parent="MapObjects" instance=ExtResource("5_xcolr")]
+transform = Transform3D(0.95738375, 0, -1.755966, 0, 2, 0, 1.755966, 0, 0.95738375, -73.772316, -0.228508, 49.744965)
+
+[node name="ramp2" parent="MapObjects" instance=ExtResource("5_xcolr")]
+transform = Transform3D(0.18957865, 0, -2.4928017, 0, 2.5, 0, 2.4928017, 0, 0.18957865, 54.43032, -0.41844535, 46.451168)
+
+[node name="ramp3" parent="MapObjects" instance=ExtResource("5_xcolr")]
+transform = Transform3D(-0.031240225, 0, 1.999756, 0, 2, 0, -1.999756, 0, -0.031240225, 81.25335, -0.32470036, 90.53024)
+
+[node name="ramp4" parent="MapObjects" instance=ExtResource("5_xcolr")]
+transform = Transform3D(-0.16400298, 0, 1.4910073, 0, 1.5, 0, -1.4910073, 0, -0.16400298, -27.243174, -0.08743554, 91.49437)
+
+[node name="Snow" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Snow"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Snow/StaticBody3D"]
+transform = Transform3D(0.997483, -0.07090554, 0, 0.07090554, 0.997483, 0, 0, 0, 1, 163.82053, 3.879715, 66.12601)
+mesh = SubResource("PlaneMesh_1vj1o")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Snow/StaticBody3D"]
+transform = Transform3D(0.997483, -0.07090554, 0, 0.07090554, 0.997483, 0, 0, 0, 1, 163.82053, 3.879715, 66.12601)
+shape = SubResource("ConcavePolygonShape3D_ryo7x")
+
+[node name="Safezone" type="Area3D" parent="Snow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.07489, 0, 66)
+collision_mask = 3
+script = ExtResource("6_4j766")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Snow/Safezone"]
+visible = false
+mesh = SubResource("BoxMesh_j6w7d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Snow/Safezone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_x4b8f")
+
+[node name="Player" parent="." instance=ExtResource("4_f8osl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5286255, 0.85934013, -78.337204)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1vj1o")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.7292764, -0.0042497683, -0.684206, 0.6841531, -0.009364158, 0.72927815, -0.009506279, -0.9999471, -0.0039215647, 0, 46.697414, 42.23482)
+light_energy = 0.7
+shadow_enabled = true
+
+[connection signal="body_entered" from="Snow/Safezone" to="Snow/Safezone" method="_on_body_entered"]

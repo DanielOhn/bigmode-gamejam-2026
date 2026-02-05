@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpbtxx5rg5vjx"
-path="res://.godot/imported/fish.blend-077f4adf17bd1262130a93da80aa9eb4.scn"
+uid="uid://b8f2xoha1o3m2"
+path="res://.godot/imported/sealpaintedwithbones.blend-29877925bdd6a99c8aeec3f2697a9ce2.scn"
 
 [deps]
 
-source_file="res://3d models/fish.blend"
-dest_files=["res://.godot/imported/fish.blend-077f4adf17bd1262130a93da80aa9eb4.scn"]
+source_file="res://3d models/sealpaintedwithbones.blend"
+dest_files=["res://.godot/imported/sealpaintedwithbones.blend-29877925bdd6a99c8aeec3f2697a9ce2.scn"]
 
 [params]
 
@@ -37,16 +37,7 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"nodes": {
-"PATH:Camera": {
-"import/skip_import": true
-},
-"PATH:Light": {
-"import/skip_import": true
-}
-}
-}
+_subresources={}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true

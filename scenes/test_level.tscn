@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dcv474yrj0c7i"]
+[gd_scene load_steps=15 format=3 uid="uid://dcv474yrj0c7i"]
 
 [ext_resource type="PackedScene" uid="uid://b4tiocdxnssuc" path="res://object/player.tscn" id="1_2venv"]
 [ext_resource type="PackedScene" uid="uid://gnwmqfn4geim" path="res://object/fish.tscn" id="1_paw1w"]
@@ -6,24 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://c6talyuswmaih" path="res://object/safezone.tscn" id="3_x4b8f"]
 [ext_resource type="PackedScene" uid="uid://clypewhhgje6f" path="res://object/icerberg_1.tscn" id="4_tmr53"]
 [ext_resource type="PackedScene" uid="uid://ddn5vbd6ee54y" path="res://object/iceberg_2.tscn" id="5_qcd3b"]
-[ext_resource type="PackedScene" uid="uid://bxhjsfn5f0ojq" path="res://3d models/map.blend" id="6_88ety"]
-[ext_resource type="PackedScene" uid="uid://cot2h3wt6lg00" path="res://object/orca.tscn" id="7_ahbqi"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_x4b8f"]
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_tmr53"]
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_paw1w"]
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_j6w7d"]
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://dd3nw8ih6no0l" path="res://object/ice.tscn" id="7_7gix3"]
+[ext_resource type="PackedScene" uid="uid://b0ud636m05g6j" path="res://object/inward_ice.tscn" id="7_dw7u0"]
+[ext_resource type="PackedScene" uid="uid://ka4mtulwn6s7" path="res://3d models/ramp.blend" id="8_7gix3"]
+[ext_resource type="PackedScene" uid="uid://cjcur6hl1l62d" path="res://object/outward_ice.tscn" id="8_fyxdr"]
+[ext_resource type="PackedScene" uid="uid://cot2h3wt6lg00" path="res://object/orca.tscn" id="11_dw7u0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2venv"]
 energy_multiplier = 0.5
@@ -63,7 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.931782, 0.5, -32.061028)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.237305, -2.1728845, 24.121593)
 
 [node name="Icerberg1" parent="Map" instance=ExtResource("4_tmr53")]
-transform = Transform3D(3.535534, 0, 3.535534, 0, 5, 0, -3.535534, 0, 3.535534, -27.535181, -2.9354894, 30)
+transform = Transform3D(3.535534, 0, 3.535534, 0, 5, 0, -3.535534, 0, 3.535534, -22.933655, 1.1502063, 22.504047)
 
 [node name="Iceberg2" parent="Map" instance=ExtResource("5_qcd3b")]
 transform = Transform3D(0.6983528, 0, 0.7157537, 0, 1, 0, -0.7157537, 0, 0.6983528, 68.90945, -0.13357544, 0)
@@ -71,92 +58,102 @@ transform = Transform3D(0.6983528, 0, 0.7157537, 0, 1, 0, -0.7157537, 0, 0.69835
 [node name="Iceberg3" parent="Map" instance=ExtResource("5_qcd3b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.10462, -3.6143465, 0)
 
-[node name="map2" parent="Map" instance=ExtResource("6_88ety")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.06637, 0)
+[node name="Level" type="Node3D" parent="Map"]
 
-[node name="Orca" parent="Map" instance=ExtResource("7_ahbqi")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -18.686543, -47.401367)
+[node name="InwardIce" parent="Map/Level" instance=ExtResource("7_dw7u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="OutwardIce" parent="Map/Level" instance=ExtResource("8_fyxdr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+
+[node name="Ice" parent="Map/Level" instance=ExtResource("7_7gix3")]
+
+[node name="Ice2" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="Ice3" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 12)
+
+[node name="Ice4" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="Ice5" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)
+
+[node name="Ice6" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0)
+
+[node name="Ice7" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 12)
+
+[node name="Ice8" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -12)
+
+[node name="Ice9" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="Ice10" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -12)
+
+[node name="Ice11" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+
+[node name="Ice12" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 12)
+
+[node name="Ice13" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -12)
+
+[node name="InwardIce2" parent="Map/Level" instance=ExtResource("7_dw7u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -36)
+
+[node name="OutwardIce2" parent="Map/Level" instance=ExtResource("8_fyxdr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -36)
+
+[node name="Ice14" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36)
+
+[node name="Ice15" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24)
+
+[node name="Ice16" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -24)
+
+[node name="Ice17" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -48)
+
+[node name="Ice18" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -48)
+
+[node name="Ice19" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -36)
+
+[node name="Ice20" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -24)
+
+[node name="Ice21" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -48)
+
+[node name="Ice22" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -24)
+
+[node name="Ice23" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -48)
+
+[node name="Ice24" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -36)
+
+[node name="Ice25" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -24)
+
+[node name="Ice26" parent="Map/Level" instance=ExtResource("7_7gix3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -48)
+
+[node name="ramp" parent="Map" instance=ExtResource("8_7gix3")]
+transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, -25.817268, -0.3873024, -4.2154016)
 
 [node name="Player" parent="." instance=ExtResource("1_2venv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="DebugUI" type="Control" parent="Player"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Player/DebugUI"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VelocityDisplay" type="HBoxContainer" parent="Player/DebugUI/VBoxContainer"]
-layout_mode = 2
-
-[node name="VelocityLabel" type="Label" parent="Player/DebugUI/VBoxContainer/VelocityDisplay"]
-layout_mode = 2
-text = "Velocity:"
-label_settings = SubResource("LabelSettings_x4b8f")
-
-[node name="VelocityUpdate" type="Label" parent="Player/DebugUI/VBoxContainer/VelocityDisplay"]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_tmr53")
-
-[node name="PowerDisplay" type="HBoxContainer" parent="Player/DebugUI/VBoxContainer"]
-layout_mode = 2
-
-[node name="PowerLabel" type="Label" parent="Player/DebugUI/VBoxContainer/PowerDisplay"]
-layout_mode = 2
-text = "Power:"
-label_settings = SubResource("LabelSettings_paw1w")
-
-[node name="PowerUpdate" type="Label" parent="Player/DebugUI/VBoxContainer/PowerDisplay"]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_j6w7d")
-
-[node name="ScoreDisplay" type="HBoxContainer" parent="Player/DebugUI/VBoxContainer"]
-layout_mode = 2
-
-[node name="ScoreLabel" type="Label" parent="Player/DebugUI/VBoxContainer/ScoreDisplay"]
-layout_mode = 2
-text = "Fish:"
-label_settings = SubResource("LabelSettings_x4b8f")
-
-[node name="ScoreUpdate" type="Label" parent="Player/DebugUI/VBoxContainer/ScoreDisplay"]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_tmr53")
-
-[node name="SealDisplay" type="HBoxContainer" parent="Player/DebugUI/VBoxContainer"]
-layout_mode = 2
-
-[node name="SealLabel" type="Label" parent="Player/DebugUI/VBoxContainer/SealDisplay"]
-layout_mode = 2
-text = "Seals Saved:"
-label_settings = SubResource("LabelSettings_x4b8f")
-
-[node name="SealUpdate" type="Label" parent="Player/DebugUI/VBoxContainer/SealDisplay"]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_tmr53")
-
-[node name="HungerDisplay" type="HBoxContainer" parent="Player/DebugUI/VBoxContainer"]
-layout_mode = 2
-
-[node name="HungerLabel" type="Label" parent="Player/DebugUI/VBoxContainer/HungerDisplay"]
-layout_mode = 2
-text = "Hunger Meter:"
-label_settings = SubResource("LabelSettings_x4b8f")
-
-[node name="HungerUpdate" type="Label" parent="Player/DebugUI/VBoxContainer/HungerDisplay"]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_tmr53")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7gix3")
@@ -165,3 +162,6 @@ environment = SubResource("Environment_7gix3")
 transform = Transform3D(-0.5821161, 0.8099091, -0.07202751, 0.34478495, 0.326092, 0.8802202, 0.7363858, 0.48755628, -0.46906778, 46.167133, 54.244904, -10.09273)
 light_energy = 0.1
 shadow_enabled = true
+
+[node name="Orca" parent="." instance=ExtResource("11_dw7u0")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.7498169, -43.255035, -77.71242)

@@ -20,11 +20,11 @@ const JUMP_VELOCITY: float = 4.5
 @export var HUNGER_DRAIN: float = 1
 
 
-@onready var power_display: HBoxContainer = find_child("DebugUI").find_child("VBoxContainer").find_child("PowerDisplay")
-@onready var velocity_display: HBoxContainer = find_child("DebugUI").find_child("VBoxContainer").find_child("VelocityDisplay")
-@onready var score_display: HBoxContainer = find_child("DebugUI").find_child("VBoxContainer").find_child("ScoreDisplay")
-@onready var seal_display: HBoxContainer = find_child("DebugUI").find_child("VBoxContainer").find_child("SealDisplay")
-@onready var hunger_display: HBoxContainer = find_child("DebugUI").find_child("VBoxContainer").find_child("HungerDisplay")
+@onready var power_display: HBoxContainer = find_child("UI").find_child("VBoxContainer").find_child("PowerDisplay")
+@onready var velocity_display: HBoxContainer = find_child("UI").find_child("VBoxContainer").find_child("VelocityDisplay")
+@onready var score_display: HBoxContainer = find_child("UI").find_child("VBoxContainer").find_child("ScoreDisplay")
+@onready var seal_display: HBoxContainer = find_child("UI").find_child("VBoxContainer").find_child("SealDisplay")
+@onready var hunger_display: HBoxContainer = find_child("UI").find_child("VBoxContainer").find_child("HungerDisplay")
 
 func _ready():
 	$CameraPivot/SpringArm3D.add_excluded_object(self)
@@ -59,7 +59,8 @@ func hunger(delta):
 	HUNGER_METER -= HUNGER_DRAIN * delta
 	
 	if (HUNGER_METER < 0):
-		print("You died from hunger :(")
+		pass
+		#print("You died from hunger :(")
 	
 func display_labels():
 	power_display.find_child("PowerUpdate").text = str(POWER)

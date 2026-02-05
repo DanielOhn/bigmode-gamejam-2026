@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tdk5s"]
 
-[node name="Fish" type="Area3D"]
+[node name="Fish" type="Area3D" groups=["Fish"]]
 script = ExtResource("1_u8y5w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

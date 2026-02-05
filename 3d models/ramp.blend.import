@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpbtxx5rg5vjx"
-path="res://.godot/imported/fish.blend-077f4adf17bd1262130a93da80aa9eb4.scn"
+uid="uid://ka4mtulwn6s7"
+path="res://.godot/imported/ramp.blend-1328d248fdc26ad6e032c6a48578ec4e.scn"
 
 [deps]
 
-source_file="res://3d models/fish.blend"
-dest_files=["res://.godot/imported/fish.blend-077f4adf17bd1262130a93da80aa9eb4.scn"]
+source_file="res://3d models/ramp.blend"
+dest_files=["res://.godot/imported/ramp.blend-1328d248fdc26ad6e032c6a48578ec4e.scn"]
 
 [params]
 
@@ -41,6 +41,9 @@ _subresources={
 "nodes": {
 "PATH:Camera": {
 "import/skip_import": true
+},
+"PATH:Cube": {
+"generate/physics": true
 },
 "PATH:Light": {
 "import/skip_import": true
