@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cpxynt00ked4o"
+path="res://.godot/imported/arf2.ogg-209508ef28701bd6ec75a2585030cec8.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/sound effects/arf2.ogg"
+dest_files=["res://.godot/imported/arf2.ogg-209508ef28701bd6ec75a2585030cec8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

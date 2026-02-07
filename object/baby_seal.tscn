@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://brl3f1hdpflm4"]
+[gd_scene load_steps=6 format=3 uid="uid://brl3f1hdpflm4"]
 
+[ext_resource type="Script" uid="uid://2uxtpmielxej" path="res://scripts/baby_seal.gd" id="1_5j0rj"]
 [ext_resource type="PackedScene" uid="uid://deb5l8bekc3i4" path="res://3d models/babyseal.glb" id="1_k7aaf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wug66"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5j0rj"]
+radius = 0.55
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_k7aaf"]
 
@@ -11,6 +15,12 @@ collision_layer = 2
 collision_mask = 3
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_wug66")
+script = ExtResource("1_5j0rj")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_5j0rj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.108165264, 0, 0)
@@ -18,5 +28,9 @@ shape = SubResource("SphereShape3D_k7aaf")
 
 [node name="babyseal" parent="." instance=ExtResource("1_k7aaf")]
 transform = Transform3D(0.49420065, -0.07593232, 0, 0.07593232, 0.49420065, 0, 0, 0, 0.5, -0.007477224, -0.11520505, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 
 [editable path="babyseal"]

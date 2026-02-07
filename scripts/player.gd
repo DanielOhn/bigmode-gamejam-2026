@@ -26,10 +26,16 @@ const JUMP_VELOCITY: float = 4.5
 @onready var hunger_bar: ProgressBar = $UI/HBoxContainer/HungerContainer/HungerSlider/HungerBarImg/HungerBar
 
 @onready var menu_ui: Control = find_child("MenuUI")
-@onready var seals_saved_anim = $SealsSavedAnim
+@onready var seals_saved_anim: Node3D = $SealsSavedAnim
+
+@onready var audio_player: AudioStreamPlayer3D = $AudioStreamPlayer3D
+const POWER_SLIDE_SE = preload("uid://bsdhekqpjloo8")
+const NOM_SE = preload("uid://b68yifpht2euy")
+const SEAL_SAVED_SE = preload("uid://bx0kw4a63pho")
 
 func _ready():
 	$CameraPivot/SpringArm3D.add_excluded_object(self)
+	seals_saved_anim.visible = false
 	
 func _physics_process(delta):
 	# Add the gravity.
@@ -59,9 +65,7 @@ func _physics_process(delta):
 	power_bar.max_value = POWER_MAX
 	power_bar.value = POWER
 	
-	
 
-	
 func hunger(delta):
 	HUNGER_METER -= HUNGER_DRAIN * delta
 	hunger_bar.value = HUNGER_METER
@@ -109,6 +113,8 @@ func power_movement(delta):
 		
 	if Input.is_action_just_released("ui_accept"):
 		direction = (transform.basis * Vector3(0, 0, -1)).normalized()
+		audio_player.stream = POWER_SLIDE_SE
+		audio_player.play()
 		
 	player_rotation(delta)
 	
@@ -121,7 +127,7 @@ func power_movement(delta):
 		velocity.z = move_toward(velocity.z, 0, SLOW_SPEED)
 		
 	move_and_slide()
-
+	
 func player_rotation(delta):
 	if Input.is_action_pressed("ui_right"):
 		rotation.y -= ROTATION_SPEED * delta
@@ -131,6 +137,8 @@ func player_rotation(delta):
 
 func seal_saved():
 	SEALS_SAVED += 1
+	audio_player.stream = SEAL_SAVED_SE
+	audio_player.play()
 	
 	seals_saved_anim.find_child("AnimationPlayer").play("PowerTextAction")
 	

@@ -14,3 +14,6 @@ func _on_body_entered(body):
 		body.HUNGER_METER += HUNGER
 		queue_free()
 		
+		body.audio_player.stream = body.NOM_SE
+		body.audio_player.play()
+		

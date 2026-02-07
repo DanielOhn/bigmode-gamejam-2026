@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bx0kw4a63pho"
+path="res://.godot/imported/seal_saved.ogg-3d411d1b25b54e18f9244857897252ca.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/sound effects/seal_saved.ogg"
+dest_files=["res://.godot/imported/seal_saved.ogg-3d411d1b25b54e18f9244857897252ca.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

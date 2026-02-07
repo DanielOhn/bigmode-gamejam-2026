@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bsdhekqpjloo8"
+path="res://.godot/imported/power_slide.ogg-9bfe4e6797694b5e7a51bfd76663055c.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/sound effects/power_slide.ogg"
+dest_files=["res://.godot/imported/power_slide.ogg-9bfe4e6797694b5e7a51bfd76663055c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

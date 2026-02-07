@@ -6,4 +6,3 @@ func _on_body_entered(body):
 		
 		player.seal_saved()
 		body.queue_free()
-		print("baby seal saved :)")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://b4tiocdxnssuc"]
+[gd_scene load_steps=20 format=4 uid="uid://b4tiocdxnssuc"]
 
 [ext_resource type="Script" uid="uid://bajloardwmsle" path="res://scripts/player.gd" id="1_5amv0"]
 [ext_resource type="PackedScene" uid="uid://ckrccb7xjf3rw" path="res://3d models/seal.blend" id="2_o1wbr"]
@@ -12,22 +12,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o1wbr"]
 radius = 0.7
 height = 3.25
-
-[sub_resource type="LabelSettings" id="LabelSettings_o1wbr"]
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_onh3l"]
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_qbh5c"]
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_12epm"]
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7m1a"]
 draw_center = false
@@ -156,77 +140,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TEstContainer" type="VBoxContainer" parent="UI"]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VelocityDisplay" type="HBoxContainer" parent="UI/TEstContainer"]
-layout_mode = 2
-
-[node name="VelocityLabel" type="Label" parent="UI/TEstContainer/VelocityDisplay"]
-layout_mode = 2
-text = "Velocity:"
-label_settings = SubResource("LabelSettings_o1wbr")
-
-[node name="VelocityUpdate" type="Label" parent="UI/TEstContainer/VelocityDisplay"]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_onh3l")
-
-[node name="PowerDisplay" type="HBoxContainer" parent="UI/TEstContainer"]
-layout_mode = 2
-
-[node name="PowerLabel" type="Label" parent="UI/TEstContainer/PowerDisplay"]
-layout_mode = 2
-text = "Power:"
-label_settings = SubResource("LabelSettings_qbh5c")
-
-[node name="PowerUpdate" type="Label" parent="UI/TEstContainer/PowerDisplay"]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_12epm")
-
-[node name="ScoreDisplay" type="HBoxContainer" parent="UI/TEstContainer"]
-layout_mode = 2
-
-[node name="ScoreLabel" type="Label" parent="UI/TEstContainer/ScoreDisplay"]
-layout_mode = 2
-text = "Fish:"
-label_settings = SubResource("LabelSettings_o1wbr")
-
-[node name="ScoreUpdate" type="Label" parent="UI/TEstContainer/ScoreDisplay"]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_onh3l")
-
-[node name="SealDisplay" type="HBoxContainer" parent="UI/TEstContainer"]
-layout_mode = 2
-
-[node name="SealLabel" type="Label" parent="UI/TEstContainer/SealDisplay"]
-layout_mode = 2
-text = "Seals Saved:"
-label_settings = SubResource("LabelSettings_o1wbr")
-
-[node name="SealUpdate" type="Label" parent="UI/TEstContainer/SealDisplay"]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_onh3l")
-
-[node name="HungerDisplay" type="HBoxContainer" parent="UI/TEstContainer"]
-layout_mode = 2
-
-[node name="HungerLabel" type="Label" parent="UI/TEstContainer/HungerDisplay"]
-layout_mode = 2
-text = "Hunger Meter:"
-label_settings = SubResource("LabelSettings_o1wbr")
-
-[node name="HungerUpdate" type="Label" parent="UI/TEstContainer/HungerDisplay"]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_onh3l")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI"]
 layout_mode = 1
@@ -386,6 +299,12 @@ skeleton = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_3amdk")
 }
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+current = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+volume_db = -8.0
 
 [connection signal="pressed" from="MenuUI/VBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
 [connection signal="pressed" from="MenuUI/VBoxContainer/RestartBtn" to="." method="_on_restart_btn_pressed"]
