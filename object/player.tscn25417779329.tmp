@@ -1,0 +1,295 @@
+[gd_scene load_steps=18 format=3 uid="uid://b4tiocdxnssuc"]
+
+[ext_resource type="Script" uid="uid://bajloardwmsle" path="res://scripts/player.gd" id="1_5amv0"]
+[ext_resource type="PackedScene" uid="uid://ckrccb7xjf3rw" path="res://3d models/seal.blend" id="2_o1wbr"]
+[ext_resource type="Texture2D" uid="uid://cr155h7c5omnh" path="res://images/PowerSliderFull.png" id="3_un65h"]
+[ext_resource type="Texture2D" uid="uid://bvy0up6d5ndjb" path="res://images/PowerSliderBar.png" id="4_aulcs"]
+[ext_resource type="Texture2D" uid="uid://b04b743xs88k" path="res://images/PowerText.png" id="5_yos3c"]
+[ext_resource type="Texture2D" uid="uid://cvwbcbjcjwa72" path="res://images/HungerSlider.png" id="6_k1g3n"]
+[ext_resource type="Texture2D" uid="uid://chdwq4dxc8cwj" path="res://images/HungerSliderBar.png" id="7_g8twv"]
+[ext_resource type="Texture2D" uid="uid://bpkiqwsnbbsps" path="res://images/HungerText.png" id="8_akims"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o1wbr"]
+radius = 0.7
+height = 3.25
+
+[sub_resource type="LabelSettings" id="LabelSettings_o1wbr"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_onh3l"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qbh5c"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_12epm"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7m1a"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkwkf"]
+bg_color = Color(0.90588236, 0.1254902, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sw1d2"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bnha"]
+bg_color = Color(0, 0.66196984, 0.6870838, 1)
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_5amv0")
+SLOW_SPEED = 0.075
+POWER_GAIN = 15.0
+
+[node name="seal" parent="." instance=ExtResource("2_o1wbr")]
+transform = Transform3D(-3.4969112e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.4969112e-08, -0.045890868, -0.12410942, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.21583992, 0.24382329)
+shape = SubResource("CapsuleShape3D_o1wbr")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 0, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+spring_length = 15.0
+margin = 0.5
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3650906, 1.9342825)
+current = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TEstContainer" type="VBoxContainer" parent="UI"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VelocityDisplay" type="HBoxContainer" parent="UI/TEstContainer"]
+layout_mode = 2
+
+[node name="VelocityLabel" type="Label" parent="UI/TEstContainer/VelocityDisplay"]
+layout_mode = 2
+text = "Velocity:"
+label_settings = SubResource("LabelSettings_o1wbr")
+
+[node name="VelocityUpdate" type="Label" parent="UI/TEstContainer/VelocityDisplay"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_onh3l")
+
+[node name="PowerDisplay" type="HBoxContainer" parent="UI/TEstContainer"]
+layout_mode = 2
+
+[node name="PowerLabel" type="Label" parent="UI/TEstContainer/PowerDisplay"]
+layout_mode = 2
+text = "Power:"
+label_settings = SubResource("LabelSettings_qbh5c")
+
+[node name="PowerUpdate" type="Label" parent="UI/TEstContainer/PowerDisplay"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_12epm")
+
+[node name="ScoreDisplay" type="HBoxContainer" parent="UI/TEstContainer"]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="UI/TEstContainer/ScoreDisplay"]
+layout_mode = 2
+text = "Fish:"
+label_settings = SubResource("LabelSettings_o1wbr")
+
+[node name="ScoreUpdate" type="Label" parent="UI/TEstContainer/ScoreDisplay"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_onh3l")
+
+[node name="SealDisplay" type="HBoxContainer" parent="UI/TEstContainer"]
+layout_mode = 2
+
+[node name="SealLabel" type="Label" parent="UI/TEstContainer/SealDisplay"]
+layout_mode = 2
+text = "Seals Saved:"
+label_settings = SubResource("LabelSettings_o1wbr")
+
+[node name="SealUpdate" type="Label" parent="UI/TEstContainer/SealDisplay"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_onh3l")
+
+[node name="HungerDisplay" type="HBoxContainer" parent="UI/TEstContainer"]
+layout_mode = 2
+
+[node name="HungerLabel" type="Label" parent="UI/TEstContainer/HungerDisplay"]
+layout_mode = 2
+text = "Hunger Meter:"
+label_settings = SubResource("LabelSettings_o1wbr")
+
+[node name="HungerUpdate" type="Label" parent="UI/TEstContainer/HungerDisplay"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_onh3l")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PowerContainer" type="VBoxContainer" parent="UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = -80
+alignment = 1
+
+[node name="PowerSlider" type="TextureRect" parent="UI/HBoxContainer/PowerContainer"]
+layout_mode = 2
+texture = ExtResource("3_un65h")
+
+[node name="PowerBarImg" type="TextureRect" parent="UI/HBoxContainer/PowerContainer/PowerSlider"]
+show_behind_parent = true
+clip_children = 1
+layout_mode = 0
+offset_left = -24.0
+offset_top = -50.0
+offset_right = 176.0
+offset_bottom = 350.0
+scale = Vector2(1.2543095, 1.2650781)
+texture = ExtResource("4_aulcs")
+
+[node name="PowerBar" type="ProgressBar" parent="UI/HBoxContainer/PowerContainer/PowerSlider/PowerBarImg"]
+layout_mode = 0
+offset_left = 53.415833
+offset_top = 65.6086
+offset_right = 57.415833
+offset_bottom = 92.6086
+scale = Vector2(20.754385, 8.523294)
+theme_override_styles/background = SubResource("StyleBoxFlat_r7m1a")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hkwkf")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="UI/HBoxContainer/PowerContainer"]
+layout_mode = 2
+texture = ExtResource("5_yos3c")
+
+[node name="HungerContainer" type="VBoxContainer" parent="UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+theme_override_constants/separation = -80
+
+[node name="HungerSlider" type="TextureRect" parent="UI/HBoxContainer/HungerContainer"]
+layout_mode = 2
+texture = ExtResource("6_k1g3n")
+
+[node name="HungerBarImg" type="TextureRect" parent="UI/HBoxContainer/HungerContainer/HungerSlider"]
+clip_children = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_g8twv")
+
+[node name="HungerBar" type="ProgressBar" parent="UI/HBoxContainer/HungerContainer/HungerSlider/HungerBarImg"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 48.0
+offset_right = 64.0
+offset_bottom = 75.0
+scale = Vector2(22.720005, 9.945053)
+theme_override_styles/background = SubResource("StyleBoxFlat_sw1d2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5bnha")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="UI/HBoxContainer/HungerContainer"]
+layout_mode = 2
+texture = ExtResource("8_akims")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = 54.0
+offset_right = 55.0
+offset_bottom = 77.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0.15686275, 0.5921569, 1)
+theme_override_colors/font_outline_color = Color(0.12949356, 0.3653844, 0.99999815, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 36
+text = "Save the Seals"
+
+[node name="SealsSaved" type="Label" parent="UI/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.19607843, 0.5921569, 1)
+theme_override_colors/font_outline_color = Color(0.12949356, 0.3653844, 0.99999815, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 36
+text = "10"
+horizontal_alignment = 1
+
+[node name="MenuUI" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.5
+offset_top = -50.5
+offset_right = 86.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeBtn" type="Button" parent="MenuUI/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="RestartBtn" type="Button" parent="MenuUI/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="MenuBtn" type="Button" parent="MenuUI/VBoxContainer"]
+layout_mode = 2
+text = "Return to Main Menu"
+
+[connection signal="pressed" from="MenuUI/VBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="MenuUI/VBoxContainer/RestartBtn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="MenuUI/VBoxContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]

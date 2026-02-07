@@ -9,35 +9,36 @@ const JUMP_VELOCITY: float = 4.5
 
 @export var POWER: float = 0
 @export var POWER_GAIN: float = 10
+@export var POWER_MAX: float = 50
+@onready var power_bar: ProgressBar = $UI/HBoxContainer/PowerContainer/PowerSlider/PowerBarImg/PowerBar
+
 @export var ROTATION_SPEED: float = 1.5
 
 @export var FISH_SCORE: int = 0
 @export var SEALS_SAVED: int = 0
+@onready var seals_saved: Label = $UI/VBoxContainer/SealsSaved
 
 # Add Hunger to the player, fish replenish it
 # 3 Different Color Fish: Blue, Red, Gold
 @export var HUNGER_METER: float = 100.0
 @export var HUNGER_DRAIN: float = 1
+@export var HUNGER_METER_MAX: float = 240
+@onready var hunger_bar: ProgressBar = $UI/HBoxContainer/HungerContainer/HungerSlider/HungerBarImg/HungerBar
 
-
-@onready var power_display: HBoxContainer = find_child("UI").find_child("VBoxContainer").find_child("PowerDisplay")
-@onready var velocity_display: HBoxContainer = find_child("UI").find_child("VBoxContainer").find_child("VelocityDisplay")
-@onready var score_display: HBoxContainer = find_child("UI").find_child("VBoxContainer").find_child("ScoreDisplay")
-@onready var seal_display: HBoxContainer = find_child("UI").find_child("VBoxContainer").find_child("SealDisplay")
-@onready var hunger_display: HBoxContainer = find_child("UI").find_child("VBoxContainer").find_child("HungerDisplay")
+@onready var menu_ui: Control = find_child("MenuUI")
+@onready var seals_saved_anim = $SealsSavedAnim
 
 func _ready():
 	$CameraPivot/SpringArm3D.add_excluded_object(self)
-
+	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	# Handle jump.
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
-
+		
+	if Input.is_action_pressed("esc"):
+		get_tree().paused = true
+		menu_ui.visible = true
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	
@@ -51,21 +52,24 @@ func _physics_process(delta):
 	power_movement(delta)
 	#power_movement_zero_velocity(delta)
 	
-	display_labels()
+	#display_labels()
 	hunger(delta)
+	
+	hunger_bar.max_value = HUNGER_METER_MAX
+	power_bar.max_value = POWER_MAX
+	power_bar.value = POWER
+	
+	
 
+	
 func hunger(delta):
 	HUNGER_METER -= HUNGER_DRAIN * delta
+	hunger_bar.value = HUNGER_METER
+	HUNGER_METER = clamp(HUNGER_METER, 0, HUNGER_METER_MAX)
 	
 	if (HUNGER_METER < -2):
 		game_over()
 	
-func display_labels():
-	power_display.find_child("PowerUpdate").text = str(POWER)
-	velocity_display.find_child("VelocityUpdate").text = str(velocity)
-	score_display.find_child("ScoreUpdate").text = str(FISH_SCORE)
-	seal_display.find_child("SealUpdate").text = str(SEALS_SAVED)
-	hunger_display.find_child("HungerUpdate").text = str(HUNGER_METER)
 
 #func regular_movement():
 	#var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -101,7 +105,7 @@ func power_movement(delta):
 	 
 	if Input.is_action_pressed("ui_accept"):
 		POWER += POWER_GAIN * delta
-		POWER = clamp(POWER, 0, 100)
+		POWER = clamp(POWER, 0, POWER_MAX)
 		
 	if Input.is_action_just_released("ui_accept"):
 		direction = (transform.basis * Vector3(0, 0, -1)).normalized()
@@ -124,5 +128,33 @@ func player_rotation(delta):
 	if Input.is_action_pressed("ui_left"):
 		rotation.y += ROTATION_SPEED * delta
 
+
+func seal_saved():
+	SEALS_SAVED += 1
+	
+	seals_saved_anim.find_child("AnimationPlayer").play("PowerTextAction")
+	
+	if SEALS_SAVED >= 10:
+		win_game()
+		
+	seals_saved.text = str(10 - SEALS_SAVED)
+
 func game_over():
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	
+func win_game():
+	get_tree().change_scene_to_file("res://scenes/win_screen.tscn")
+
+func _on_resume_btn_pressed():
+	menu_ui.visible = false
+	get_tree().paused = false
+
+
+func _on_restart_btn_pressed():
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+
+
+func _on_menu_btn_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

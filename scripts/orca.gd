@@ -43,7 +43,6 @@ func follow():
 	transform.origin.z = player.transform.origin.z
 
 func _on_body_entered(body):
-	print(body)
 	if body.is_in_group("Player"):
 		body.game_over()
 	
