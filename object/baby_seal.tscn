@@ -1,15 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://brl3f1hdpflm4"]
+[gd_scene load_steps=4 format=3 uid="uid://brl3f1hdpflm4"]
 
 [ext_resource type="PackedScene" uid="uid://deb5l8bekc3i4" path="res://3d models/babyseal.glb" id="1_k7aaf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wug66"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_wug66"]
-radius = 0.6
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k7aaf"]
-radius = 0.2
-height = 1.0
+[sub_resource type="SphereShape3D" id="SphereShape3D_k7aaf"]
 
 [node name="BabySeal" type="RigidBody3D" groups=["BabySeal"]]
 collision_layer = 2
@@ -17,15 +12,11 @@ collision_mask = 3
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_wug66")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("SphereMesh_wug66")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.108165264, 0, 0)
-shape = SubResource("CapsuleShape3D_k7aaf")
+shape = SubResource("SphereShape3D_k7aaf")
 
 [node name="babyseal" parent="." instance=ExtResource("1_k7aaf")]
-transform = Transform3D(0.19768026, -0.030372927, 0, 0.030372927, 0.19768026, 0, 0, 0, 0.2, -0.007477224, -0.11520505, 0)
+transform = Transform3D(0.49420065, -0.07593232, 0, 0.07593232, 0.49420065, 0, 0, 0, 0.5, -0.007477224, -0.11520505, 0)
 
 [editable path="babyseal"]

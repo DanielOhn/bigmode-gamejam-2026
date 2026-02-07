@@ -29,7 +29,6 @@ const JUMP_VELOCITY: float = 4.5
 func _ready():
 	$CameraPivot/SpringArm3D.add_excluded_object(self)
 
-
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -58,9 +57,8 @@ func _physics_process(delta):
 func hunger(delta):
 	HUNGER_METER -= HUNGER_DRAIN * delta
 	
-	if (HUNGER_METER < 0):
-		pass
-		#print("You died from hunger :(")
+	if (HUNGER_METER < -2):
+		game_over()
 	
 func display_labels():
 	power_display.find_child("PowerUpdate").text = str(POWER)
@@ -120,31 +118,11 @@ func power_movement(delta):
 		
 	move_and_slide()
 
-#func power_movement_zero_velocity(delta):
-	#var direction = Vector3.ZERO
-	 #
-	#if Input.is_action_pressed("ui_accept"):
-		#POWER += 5 * delta
-		#POWER = clamp(POWER, 0, 100)
-		#
-	#if Input.is_action_just_released("ui_accept") and velocity.is_equal_approx(Vector3.ZERO):
-		#direction = (transform.basis * Vector3(0, 0, -1)).normalized()
-		#
-	#player_rotation(delta)
-	#
-	#if direction:
-		#velocity.x += direction.x * POWER
-		#velocity.z += direction.z * POWER
-		#POWER = 0
-	#else:
-		#velocity.x = move_toward(velocity.x, 0, SLIDE_SPEED * 10)
-		#velocity.z = move_toward(velocity.z, 0, SLIDE_SPEED * 10)
-	#
-	#
-	#move_and_slide()
-
 func player_rotation(delta):
 	if Input.is_action_pressed("ui_right"):
 		rotation.y -= ROTATION_SPEED * delta
 	if Input.is_action_pressed("ui_left"):
 		rotation.y += ROTATION_SPEED * delta
+
+func game_over():
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")

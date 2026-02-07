@@ -45,8 +45,7 @@ func follow():
 func _on_body_entered(body):
 	print(body)
 	if body.is_in_group("Player"):
-		print("YOU LOSE")
-		#body.queue_free() 
+		body.game_over()
 	
 	if body.is_in_group("BabySeal") or body.is_in_group("Fish"):
 		body.queue_free()

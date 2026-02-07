@@ -1,5 +1,5 @@
 extends Area3D
-class_name fish
+class_name Fish
 
 @export var HUNGER: float = 20
 

@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://ckrccb7xjf3rw" path="res://3d models/seal.blend" id="2_o1wbr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o1wbr"]
+radius = 0.7
+height = 3.25
 
 [sub_resource type="LabelSettings" id="LabelSettings_o1wbr"]
 outline_size = 2
@@ -27,10 +29,10 @@ SLOW_SPEED = 0.075
 POWER_GAIN = 15.0
 
 [node name="seal" parent="." instance=ExtResource("2_o1wbr")]
-transform = Transform3D(-1.7484556e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.7484556e-08, -0.045890868, -0.12410942, 0)
+transform = Transform3D(-3.4969112e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.4969112e-08, -0.045890868, -0.12410942, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.10422182, 0.16117942)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.21583992, 0.24382329)
 shape = SubResource("CapsuleShape3D_o1wbr")
 
 [node name="CameraPivot" type="Node3D" parent="."]
@@ -38,7 +40,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 0, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
-spring_length = 9.0
+spring_length = 15.0
 margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]

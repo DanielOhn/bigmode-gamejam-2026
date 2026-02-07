@@ -45,11 +45,10 @@ shadow_mesh = SubResource("ArrayMesh_beh1d")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_so06y"]
 data = PackedVector3Array(-1, -1, 0.5, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, -1, -0.5, -1, -1, -1, -1, -1, 0, -1, 1, 1, -1, -1, 0.5, -1, 1, 1, -1, -1, 0, -1, -1, -0.5, -0.5, -1, -1, -1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, 0.5, -1, -1, 1, -1, -1, 0, -1, -1, -1, 1, -1, -0.5, -1, -1, -1, 1, -1, 0, -1, -1, 0.5, -1, -1, 1, -1, -0.5, 1, 1, -1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, 0.5, 1, -1, 1, 1, -1, 0, 1, 1, -1, 1, -1, -0.5, 1, 1, -1, 1, -1, 0, 1, -1, 0.5, 0.5, -1, 1, 1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -0.5, -1, 1, -1, -1, 1, 0, -1, 1, 1, 1, 1, 0.5, -1, 1, 1, 1, 1, 0, -1, 1, -0.5, -1, 1, 0.5, -1, 0.5, 1, -1, 1, 1, -1, 0.5, 0.5, -1, 0.5, 0.5, -1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, -0.5, -1, 0.5, 0, -1, 1, 0, -1, 0.5, -0.5, -1, 0.5, -0.5, -1, 1, 0, -1, 1, -0.5, -1, -0.5, 0, -1, 0, 0, -1, -0.5, -0.5, -1, -0.5, -0.5, -1, 0, 0, -1, 0, 0.5, -1, -0.5, 1, -1, 0, 1, -1, -0.5, 0.5, -1, -0.5, 0.5, -1, 0, 1, -1, 0, 0, -1, -0.5, 0.5, -1, 0, 0.5, -1, -0.5, 0, -1, -0.5, 0, -1, 0, 0.5, -1, 0, 0, -1, -1, 0.5, -1, -0.5, 0.5, -1, -1, 0, -1, -1, 0, -1, -0.5, 0.5, -1, -0.5, 0.5, -1, -1, 1, -1, -0.5, 1, -1, -1, 0.5, -1, -1, 0.5, -1, -0.5, 1, -1, -0.5, -1, -1, -0.5, -0.5, -1, 0, -0.5, -1, -0.5, -1, -1, -0.5, -1, -1, 0, -0.5, -1, 0, -1, -1, -1, -0.5, -1, -0.5, -0.5, -1, -1, -1, -1, -1, -1, -1, -0.5, -0.5, -1, -0.5, -0.5, -1, -1, 0, -1, -0.5, 0, -1, -1, -0.5, -1, -1, -0.5, -1, -0.5, 0, -1, -0.5, -1, -1, 0.5, -0.5, -1, 1, -0.5, -1, 0.5, -1, -1, 0.5, -1, -1, 1, -0.5, -1, 1, -1, -1, 0, -0.5, -1, 0.5, -0.5, -1, 0, -1, -1, 0, -1, -1, 0.5, -0.5, -1, 0.5, -0.5, -1, 0, 0, -1, 0.5, 0, -1, 0, -0.5, -1, 0, -0.5, -1, 0.5, 0, -1, 0.5, 0, -1, 0.5, 0.5, -1, 1, 0.5, -1, 0.5, 0, -1, 0.5, 0, -1, 1, 0.5, -1, 1, 0, -1, 0, 0.5, -1, 0.5, 0.5, -1, 0, 0, -1, 0, 0, -1, 0.5, 0.5, -1, 0.5, 0.5, -1, 0, 1, -1, 0.5, 1, -1, 0, 0.5, -1, 0, 0.5, -1, 0.5, 1, -1, 0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47wa6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ti3oq"]
 resource_name = "Ice"
-transparency = 4
 cull_mode = 2
-albedo_color = Color(0.3761738, 0.73354644, 0.79113406, 0.95)
+albedo_color = Color(0.61972183, 0.7911358, 0.77196234, 1)
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8yuv3"]
@@ -66,7 +65,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_oxfg0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_so06y"]
 resource_name = "ice_Ice_cell_006"
 _surfaces = [{
 "aabb": AABB(-1.628364, -0.5, -2.3503652, 3.0827043, 1, 5.054561),
@@ -74,7 +73,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 60,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFQAUABcAFwAUABgAFQAXABkAGgAbABwAGgAdABsAHgAfACAAHwAeACEAIQAeACIAHwAhACMA"),
-"material": SubResource("StandardMaterial3D_47wa6"),
+"material": SubResource("StandardMaterial3D_ti3oq"),
 "name": "Ice",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -84,7 +83,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8yuv3")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ti3oq"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_47wa6"]
 points = PackedVector3Array(-0.06720437, -0.35197806, -1.6749828, 1.436089, 0.4947406, 2.704196, 1.3742224, 0.01920017, 2.6026714, -1.628364, 0.48951724, 2.6784809, -1.628364, 0.48951724, -2.32465, -1.5481329, -0.5, 2.5468197, 1.3880155, 0.4787161, -0.35849026, 1.1920397, -0.5, -0.34132713, -1.5481329, -0.5, -2.1187553, 1.1920397, -0.5, 2.5468197, -0.06601144, 0.47858006, -1.8117379, 1.2976917, -0.43531376, -0.2773272, 1.2984488, -0.43553886, 2.602751, -1.6139141, 0.09746033, -2.3009374, -0.28887483, -0.5, -1.7485157, 1.3737905, 0.019189123, -0.27742487)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_uyxii"]
@@ -101,7 +100,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_so06y"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_a4u1c"]
 resource_name = "ice_Ice_cell_007"
 _surfaces = [{
 "aabb": AABB(-5.540595, -0.5, -4.1487412, 10.540088, 1, 6.497678),
@@ -109,7 +108,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 48,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADQAMAA8ADQAPABAAEQASABMAEgARABQAEgAUABUAFgAXABgAFgAZABcAGgAbABwAGgAdABsA"),
-"material": SubResource("StandardMaterial3D_47wa6"),
+"material": SubResource("StandardMaterial3D_ti3oq"),
 "name": "Ice",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -119,7 +118,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_uyxii")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_47wa6"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p7p3g"]
 points = PackedVector3Array(4.908241, 0.48708385, -1.4448198, -0.60268086, -0.5, -3.869429, -0.620341, 0.47383878, -4.0283837, -3.9102497, 0.48704138, 2.348932, 4.5196447, -0.5, 2.106801, -5.061036, -0.5, 0.778295, 4.907509, 0.48701137, 2.348743, 4.5196447, -0.5, -1.4025377, -5.216306, 0.47395912, 0.5675001, -3.7321575, -0.5, 2.106801, -3.9989643, 0.076316535, 2.337123, -5.4641247, 0.17986909, 0.8152024, -0.32056147, 0.47870243, -4.059025, -0.31758624, -0.5, -3.869429, -5.352739, 0.4877429, 0.91522986, -5.061036, -0.5, 0.5887591)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_puolb"]
@@ -136,7 +135,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_a4u1c"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_n8oen"]
 resource_name = "ice_Ice_cell_001"
 _surfaces = [{
 "aabb": AABB(-3.6872134, -0.5, -1.9371047, 6.749376, 1, 5.2494698),
@@ -144,7 +143,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_47wa6"),
+"material": SubResource("StandardMaterial3D_ti3oq"),
 "name": "Ice",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -154,7 +153,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_puolb")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p7p3g"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tj8j3"]
 points = PackedVector3Array(-2.2137675, -0.48438883, 0.67426085, 2.1005213, -0.37386534, -1.9371047, 3.0621624, 0.498227, 3.2946067, -3.6763062, 0.49655887, -1.9371047, 2.8609972, -0.54017484, 3.3258014, -3.4647067, -0.5, -1.772836, 2.8396556, -0.5, -1.7733151, -2.3605695, 0.4662072, 0.6001617, 3.050597, 0.49645814, -1.9371047, 2.8609972, 0.5043714, 3.3258014, -2.3520632, -0.5, 0.6004694, -2.495739, 0.48007718, 0.44509938, -3.4647067, -0.5, -1.6247739)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fl2er"]
@@ -171,7 +170,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_n8oen"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_hyre7"]
 resource_name = "ice_Ice_cell_002"
 _surfaces = [{
 "aabb": AABB(-2.7081034, -0.5, -3.3333707, 6.4988456, 1, 7.540808),
@@ -179,7 +178,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 60,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEQAQABMAEwAQABQAEQATABUAFgAXABgAFwAWABkAGQAWABoAFwAZABsAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEA"),
-"material": SubResource("StandardMaterial3D_47wa6"),
+"material": SubResource("StandardMaterial3D_ti3oq"),
 "name": "Ice",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -189,7 +188,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fl2er")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tj8j3"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_57784"]
 points = PackedVector3Array(0.06663997, 0.49462444, -3.1067047, 3.6364322, 0.47829852, -0.67888093, 3.550329, -0.5, -0.64788854, -2.6626337, -0.3589143, 3.7205324, -1.3059309, 0.4964464, 4.078031, 0.25531945, -0.5, -3.0593588, -2.6655467, 0.4945401, -0.3736822, 2.556663, 0.4981266, -3.30226, -1.031056, -0.5, 3.9334261, -2.4779336, -0.5, -0.32617658, 2.4250455, -0.5, -3.0586743, -2.699671, 0.5, 3.585861, 3.7249043, 0.49245408, -0.9648988, -0.9928818, 0.4783651, 3.9499953, -2.4779336, -0.5, 3.5309436, 1.4461426, 0.41557294, -3.3333707, -1.3825464, -0.35890475, 4.1475744, 3.550329, -0.5, -0.88814574, -1.0756042, 0.06489014, 4.032809, 0.23776469, 0.49466312, -3.2778819)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bingd"]
@@ -206,7 +205,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_hyre7"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_iboc4"]
 resource_name = "ice_Ice_cell_003"
 _surfaces = [{
 "aabb": AABB(-4.5831285, -0.5, -1.4997703, 9.082729, 1, 2.9992087),
@@ -214,7 +213,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_47wa6"),
+"material": SubResource("StandardMaterial3D_ti3oq"),
 "name": "Ice",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -224,7 +223,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bingd")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_57784"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_swrwi"]
 points = PackedVector3Array(-4.411171, 0.49960467, 1.4994384, -4.243989, -0.5, -1.4160752, -4.243989, -0.5, 1.3858886, 4.499601, 0.49934933, 1.4986936, -4.323704, 0.48921087, -1.4993098, 4.161214, -0.5, -1.4160752, 4.410576, 0.4891742, -1.4992027, 4.161214, -0.5, 1.3858886, -4.531498, -0.1906622, 1.481733, -4.4940295, -0.18923527, -1.499429)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6bh8i"]
@@ -241,7 +240,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_iboc4"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_62pqf"]
 resource_name = "ice_Ice_cell_004"
 _surfaces = [{
 "aabb": AABB(-0.9996017, -0.5, -0.9995433, 2.9988403, 1, 2.998873),
@@ -249,7 +248,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 24,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACwAMAA0ADgAPABAADgARAA8A"),
-"material": SubResource("StandardMaterial3D_47wa6"),
+"material": SubResource("StandardMaterial3D_ti3oq"),
 "name": "Ice",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -259,7 +258,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6bh8i")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_swrwi"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ygfci"]
 points = PackedVector3Array(-1.0231646, -0.52369803, 2.0231302, 2.0230718, 0.5233224, -0.9756308, 2.0230718, -0.52369803, -0.9756308, -0.9553096, 0.5, -0.95548356, -0.9754554, 0.5233224, 2.0231302, -0.9542168, -0.5, -0.9543906, 2.0230718, -0.52369803, -1.0233438, 2.0230718, 0.5233224, -1.0233438, -1.0231646, 0.5233224, 2.0231302, -0.9754554, -0.52369803, 2.0231302)
 
 [node name="Ice" type="Node3D"]
@@ -284,61 +283,61 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3716354, 0, 3.295804)
 
 [node name="Ice_cell" type="MeshInstance3D" parent="Dynamic/Ice_cell"]
-mesh = SubResource("ArrayMesh_oxfg0")
+mesh = SubResource("ArrayMesh_so06y")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dynamic/Ice_cell"]
-shape = SubResource("ConvexPolygonShape3D_ti3oq")
+shape = SubResource("ConvexPolygonShape3D_47wa6")
 
 [node name="Ice_cell_001" type="RigidBody3D" parent="Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0005074, 0, 0.6500115)
 
 [node name="Ice_cell_001" type="MeshInstance3D" parent="Dynamic/Ice_cell_001"]
-mesh = SubResource("ArrayMesh_so06y")
+mesh = SubResource("ArrayMesh_a4u1c")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dynamic/Ice_cell_001"]
-shape = SubResource("ConvexPolygonShape3D_47wa6")
+shape = SubResource("ConvexPolygonShape3D_p7p3g")
 
 [node name="Ice_cell_002" type="RigidBody3D" parent="Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9378376, 0, -4.0628953)
 
 [node name="Ice_cell_002" type="MeshInstance3D" parent="Dynamic/Ice_cell_002"]
-mesh = SubResource("ArrayMesh_a4u1c")
+mesh = SubResource("ArrayMesh_n8oen")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dynamic/Ice_cell_002"]
-shape = SubResource("ConvexPolygonShape3D_p7p3g")
+shape = SubResource("ConvexPolygonShape3D_tj8j3")
 
 [node name="Ice_cell_003" type="RigidBody3D" parent="Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2918968, 0, -2.6666293)
 
 [node name="Ice_cell_003" type="MeshInstance3D" parent="Dynamic/Ice_cell_003"]
-mesh = SubResource("ArrayMesh_n8oen")
+mesh = SubResource("ArrayMesh_hyre7")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dynamic/Ice_cell_003"]
-shape = SubResource("ConvexPolygonShape3D_tj8j3")
+shape = SubResource("ConvexPolygonShape3D_57784")
 
 [node name="Ice_cell_004" type="RigidBody3D" parent="Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5003986, 0, 4.5005617)
 
 [node name="Ice_cell_004" type="MeshInstance3D" parent="Dynamic/Ice_cell_004"]
-mesh = SubResource("ArrayMesh_hyre7")
+mesh = SubResource("ArrayMesh_iboc4")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dynamic/Ice_cell_004"]
-shape = SubResource("ConvexPolygonShape3D_57784")
+shape = SubResource("ConvexPolygonShape3D_swrwi")
 
 [node name="Ice_cell_005" type="RigidBody3D" parent="Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0003986, 0, -5.000457)
 
 [node name="Ice_cell_005" type="MeshInstance3D" parent="Dynamic/Ice_cell_005"]
-mesh = SubResource("ArrayMesh_iboc4")
+mesh = SubResource("ArrayMesh_62pqf")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dynamic/Ice_cell_005"]
-shape = SubResource("ConvexPolygonShape3D_swrwi")
+shape = SubResource("ConvexPolygonShape3D_ygfci")
 
 [node name="ResetTimer" type="Timer" parent="."]
 wait_time = 10.0

@@ -7,6 +7,9 @@ extends Node3D
 @onready var reset_timer: Timer = find_child("ResetTimer")
 @onready var spawn_timer: Timer = find_child("SpawnTimer")
 
+@onready var fish_node: Node3D = get_tree().root.get_child(0).find_child("Fish")
+@onready var seals_node: Node3D = get_tree().root.get_child(0).find_child("Seals")
+
 @export var spawn_fish: bool = true
 
 const FISH = preload("uid://gnwmqfn4geim")
@@ -61,7 +64,7 @@ func reset_ice():
 	shattered = false
 
 func start_timer():
-	reset_timer.start(10)
+	reset_timer.start(randf_range(20, 40))
 
 func _on_reset_timer_timeout():
 	reset_ice()
@@ -69,11 +72,11 @@ func _on_reset_timer_timeout():
 func _on_spawn_timer_timeout():
 	var chance: float = randf()
 	
-	if chance > .95 and !shattered:
+	
+	if chance > .95 and !shattered and fish_node.get_child_count() < 24:
 		var pick_fish: PackedScene = null
-		if chance >= .995:
-			spawn_seal()
-		elif chance >= .99:
+			
+		if chance >= .99:
 			pick_fish = fish_options[2]
 		elif chance >= .975:
 			pick_fish = fish_options[1]
@@ -81,20 +84,19 @@ func _on_spawn_timer_timeout():
 			pick_fish = fish_options[0]
 		
 		if pick_fish != null:
-			var fish = pick_fish.instantiate()
-			
-			get_tree().root.get_child(0).add_child(fish)
+			var fish: Fish = pick_fish.instantiate()
+			fish_node.add_child(fish)
 			fish.transform.origin = transform.origin + Vector3(randf_range(-5, 5), 1, randf_range(-5, 5))
 	
+	if chance > .99 and !shattered and seals_node.get_child_count() < 14:
+		spawn_seal()
 	spawn_timer.wait_time = randf_range(10, 30)
 	spawn_timer.start()
 	
-
 func spawn_seal():
-	pass
 	var seal = BABY_SEAL.instantiate()
-	get_tree().root.get_child(0).add_child(seal)
-	seal.transform.origin = transform.origin + Vector3.UP * 5
+	seals_node.add_child(seal)
+	seal.transform.origin = transform.origin + Vector3(randf_range(-5, 5), 1 * 20, randf_range(-5, 5))
 	
 
 # Get Static

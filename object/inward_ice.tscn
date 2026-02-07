@@ -1,12 +1,11 @@
-[gd_scene load_steps=25 format=4 uid="uid://b0ud636m05g6j"]
+[gd_scene load_steps=24 format=4 uid="uid://b0ud636m05g6j"]
 
 [ext_resource type="Script" uid="uid://cwu3hf13t1vp6" path="res://scripts/ice.gd" id="1_aheb3"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a202f"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ti3oq"]
 resource_name = "Ice"
-transparency = 4
 cull_mode = 2
-albedo_color = Color(0.3761738, 0.73354644, 0.79113406, 0.95)
+albedo_color = Color(0.61972183, 0.7911358, 0.77196234, 1)
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wmxvs"]
@@ -24,7 +23,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_40bjk"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_aheb3"]
 resource_name = "ice_Cube_003"
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 2, 2),
@@ -33,7 +32,7 @@ _surfaces = [{
 "index_count": 498,
 "index_data": PackedByteArray("AAABAAIAAAC8AAEAAAADALwAAAAEAAMAAAC9AAQAvQAAAAUABQAAAAYABgAAAL4AvgAAAAcACAAJAAoACAC/AAkACAALAL8ACAAMAAsACADAAAwAwAAIAA0ADQAIAA4ADgAIAMEAwQAIAA8AEAARABIAEADCABEAEAATAMIAEAAUABMAEADDABQAwwAQABUAFQAQABYAFgAQAMQAxAAQABcAGAAZABoAGADFABkAGAAbAMUAGAAcABsAGADGABwAxgAYAB0AHQAYAB4AHgAYAMcAxwAYAB8AIAAhACIAIAAjACEAyAAmAMkAyADKACYAJwDIAMkAJwDJACgAJADKAMgAJAAlAMoAywDMAM0AywAqAMwAOgA7ADwAOgA9ADsAzgDPAD4AzgA/AM8ASQBKAEsASQBMAEoA0ABPAE0A0ADRAE8A0gCcANMA0gCaAJwA1ADSANMA1ADTAJsAmQDSANQAmQCdANIA1QBfANYA1QDXAF8A2ADZANoA2ADbANkA3ABXAN0A3ABYAFcA3gBqAGsA3gDfAGoA4ADfAN4A4ABsAN8AbQDgAN4AbQDeAGkA4QBnAGUA4QBoAGcAbgBvAHAAbgBxAG8A4gBzAHQA4gByAHMAdQB2AHcAdQB4AHYA4wAyADMA4wAxADIAQwBBAOQAQwBEAEEAQgDlAOYAQgDnAOUA6ABAAOkA6ADqAEAAeQB6AHsAeQB8AHoAfQB+AH8AfQCAAH4AgQCCAIMAgQCEAIIAKwAsAOsAKwDsACwALQDtAC4ALQDuAO0A7wAvADAA7wDwAC8AhQCGAIcAhQCIAIYAiQCKAIsAiQCMAIoAjQCOAI8AjQCQAI4AOAA3APEAOAA5ADcA8gDzAPQA8gBkAPMA9QD2AGYA9QD3APYA+AD5APoA+AD7APkAWQD8AP0AWQBaAPwAkQD+AJMAkQCSAP4AVgD/AAABVgABAf8AAgGVAAMBAgGXAJUAlAACAQMBlAADAQQBBAEDAZYABAGWAJgAXgBjAAUBXgAGAWMAXAAHAVsAXABdAAcBYQBgAGIAYQAIAWAACQEKAQsBCQEMAQoBDQFOAA4BDQFUAE4ADwEQAVUADwFTABABngCfAKAAngARAZ8AoQCiAKMAoQCkAKIApQCmAKcApQCoAKYAqQCqAKsAqQCsAKoAEgETARQBEgFGABMBRwAVAUgARwBFABUBUABRAFIAUAAWAVEArQCuAK8ArQCwAK4AsQCyALMAsQC0ALIAtQC2ALcAtQC4ALYAuQC7ABcBuQC6ALsANgAYARkBNgApABgBNAAaATUANAAbARoBHAEdAR4BHAEfAR0B"),
 "lods": [0.25846845, PackedByteArray("AAABAAIAAAADAAEAAAAEAAMABAAAAAUABQAAAAYABgAAAAcACAAJAAoACAALAAkACAAMAAsADAAIAA0ADQAIAA4ADgAIAA8AEAARABIAEAATABEAEAAUABMAEAAVABQAFQAQABYAFgAQABcAGAAZABoAGAAbABkAGAAcABsAHAAYAB0AHQAYAB4AHgAYAB8AIAAhACIAIAAjACEAJAAlACYAJwAkACYAJwAmACgAKQAqACsAKwAqACwALQArACwALQAsAC4ALgAsAC8ALgAvADAAMAAvADEAMQAyADMANAApACsANAArADUANgApADQANwApADYAOAA5ADcAOgA7ADwAOgA9ADsAPgA/AEAAPwBBAEAAQgBBAD8AQgBDAEEAQwBEAEEARQA/AD4ARQBGAD8ARwBFAD4ARwA+AEgASQBKAEsASQBMAEoATQBOAE8ATQBPAFAAUABRAFIAUwBOAE0AUwBUAE4AVQBTAE0AVgBTAFUAVgBXAFMAVgBYAFcAWQBYAFYAWQBaAFgAWQBbAFoAXABdAFsAXgBfAGAAYQBeAGAAYQBgAGIAXgBjAF8AXgBkAGMAYwBkAGUAYwBlAGYAZABnAGUAZABoAGcAaQBqAGsAaQBsAGoAbQBsAGkAbgBvAHAAbgBxAG8AcgBzAHQAdQB2AHcAdQB4AHYAeQB6AHsAeQB8AHoAfQB+AH8AfQCAAH4AgQCCAIMAgQCEAIIAhQCGAIcAhQCIAIYAiQCKAIsAiQCMAIoAjQCOAI8AjQCQAI4AkQCSAJMAlACVAJYAlACXAJUAlACWAJgAmQCaAJsAmwCaAJwAmQCdAJoAngCfAKAAoQCiAKMAoQCkAKIApQCmAKcApQCoAKYAqQCqAKsAqQCsAKoArQCuAK8ArQCwAK4AsQCyALMAsQC0ALIAtQC2ALcAtQC4ALYAuQC6ALsA")],
-"material": SubResource("StandardMaterial3D_a202f"),
+"material": SubResource("StandardMaterial3D_ti3oq"),
 "name": "Ice",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -43,15 +42,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wmxvs")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_anwyr"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_40bjk"]
 data = PackedVector3Array(-1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, 0.75, -1, 1, 1, -1, 1, -0.75, -1, -1, -1, -1, 1, -1, -1, 1, -0.5, -1, -1, -1, -1, 1, -0.75, -1, -1, -1, -1, 1, 0.5, -1, 1, 0.75, -1, -1, -1, -1, 1, 0.25, -1, 1, 0.5, -1, 1, -0.25, -1, -1, -1, -1, 1, -0.5, -1, -1, -1, -1, 1, 0, -1, 1, 0.25, -1, 1, 0, -1, -1, -1, -1, 1, -0.25, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -0.75, 1, -1, -1, 1, -1, 0.75, 1, -1, 1, -1, -1, 1, 1, -1, 0.5, 1, -1, 1, -1, -1, 0.75, 1, -1, 1, -1, -1, -0.5, 1, -1, -0.75, 1, -1, 1, -1, -1, -0.25, 1, -1, -0.5, 1, -1, 0.25, 1, -1, 1, -1, -1, 0.5, 1, -1, 1, -1, -1, 0, 1, -1, -0.25, 1, -1, 0, 1, -1, 1, -1, -1, 0.25, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, -0.75, 1, 1, -1, 1, 1, 0.75, 1, -1, 1, 1, 1, 1, 1, 1, 0.5, 1, -1, 1, 1, 1, 0.75, 1, -1, 1, 1, 1, -0.5, 1, 1, -0.75, 1, -1, 1, 1, 1, -0.25, 1, 1, -0.5, 1, 1, 0.25, 1, -1, 1, 1, 1, 0.5, 1, -1, 1, 1, 1, 0, 1, 1, -0.25, 1, 1, 0, 1, -1, 1, 1, 1, 0.25, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 0.75, 1, 1, 1, 1, 1, -0.75, 1, 1, -1, -1, 1, -1, 1, 1, -0.5, 1, 1, -1, -1, 1, -0.75, 1, 1, -1, -1, 1, 0.5, 1, 1, 0.75, 1, 1, -1, -1, 1, 0.25, 1, 1, 0.5, 1, 1, -0.25, 1, 1, -1, -1, 1, -0.5, 1, 1, -1, -1, 1, 0, 1, 1, 0.25, 1, 1, 0, 1, 1, -1, -1, 1, -0.25, 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, -0.75, 1, 0.75, -1, 1, 1, -1, 1, 0.75, -0.75, 1, 0.75, -0.75, 1, 1, -1, 1, 1, 0.25, 0.63743544, 0.75, 0, 1, 1, 0, 0.5002394, 0.75, 0.25, 0.63743544, 0.75, 0.25, 1, 1, 0, 1, 1, 0.25, -0.038226604, -0.25, 0, -0.14652944, 0, 0, -0.09371936, -0.25, 0.25, -0.038226604, -0.25, 0.25, -0.09371936, 0, 0, -0.14652944, 0, -0.75, 0.63743544, -0.25, -1, 1, 0, -1, 1, -0.25, -0.75, 0.63743544, -0.25, -0.75, 0.5002394, 0, -1, 1, 0, -0.25, -0.038226604, -0.25, -0.5, 0.08277643, 0, -0.5, 0.14971095, -0.25, -0.25, -0.038226604, -0.25, -0.25, -0.09371936, 0, -0.5, 0.08277643, 0, -0.25, 0.63743544, -0.75, -0.5, 0.3933136, -0.5, -0.5, 1, -0.75, -0.25, 0.63743544, -0.75, -0.25, 0.14971095, -0.5, -0.5, 0.3933136, -0.5, -0.75, 1, -0.75, -1, 1, -0.5, -1, 1, -0.75, -0.75, 1, -0.75, -0.75, 1, -0.5, -1, 1, -0.5, 0.75, 0.63743544, -0.25, 0.5, 0.08277643, 0, 0.5, 0.14971095, -0.25, 0.75, 0.63743544, -0.25, 0.75, 0.5002394, 0, 0.5, 0.08277643, 0, 0.75, 1, -0.75, 0.5, 0.3933136, -0.5, 0.5, 1, -0.75, 0.75, 1, -0.75, 0.75, 1, -0.5, 0.5, 0.3933136, -0.5, 0.25, 0.63743544, -0.75, 0, 0.08277643, -0.5, 0, 0.5002394, -0.75, 0.25, 0.63743544, -0.75, 0.25, 0.14971095, -0.5, 0, 0.08277643, -0.5, 0.75, 1, 0.75, 0.5, 1, 1, 0.5, 1, 0.75, 0.75, 1, 0.75, 0.75, 1, 1, 0.5, 1, 1, 0.75, 0.63743544, 0.25, 0.5, 0.3933136, 0.5, 0.5, 0.14971095, 0.25, 0.75, 0.63743544, 0.25, 0.75, 1, 0.5, 0.5, 0.3933136, 0.5, 0.25, -0.038226604, 0.25, 0, 0.08277643, 0.5, 0, -0.09371936, 0.25, 0.25, -0.038226604, 0.25, 0.25, 0.14971095, 0.5, 0, 0.08277643, 0.5, -0.25, 0.63743544, 0.75, -0.5, 1, 1, -0.5, 1, 0.75, -0.25, 0.63743544, 0.75, -0.25, 1, 1, -0.5, 1, 1, -0.25, -0.038226604, 0.25, -0.5, 0.3933136, 0.5, -0.5, 0.14971095, 0.25, -0.25, -0.038226604, 0.25, -0.25, 0.14971095, 0.5, -0.5, 0.3933136, 0.5, -0.75, 0.63743544, 0.25, -1, 1, 0.5, -1, 1, 0.25, -0.75, 0.63743544, 0.25, -0.75, 1, 0.5, -1, 1, 0.5, -0.5, 0.14971095, 0.25, -0.75, 1, 0.5, -0.75, 0.63743544, 0.25, -0.5, 0.14971095, 0.25, -0.5, 0.3933136, 0.5, -0.75, 1, 0.5, -0.5, 0.08277643, 0, -0.75, 0.63743544, 0.25, -0.75, 0.5002394, 0, -0.5, 0.08277643, 0, -0.5, 0.14971095, 0.25, -0.75, 0.63743544, 0.25, -0.75, 0.5002394, 0, -1, 1, 0.25, -1, 1, 0, -0.75, 0.5002394, 0, -0.75, 0.63743544, 0.25, -1, 1, 0.25, 0, -0.09371936, 0.25, -0.25, 0.14971095, 0.5, -0.25, -0.038226604, 0.25, 0, -0.09371936, 0.25, 0, 0.08277643, 0.5, -0.25, 0.14971095, 0.5, 0, -0.14652944, 0, -0.25, -0.038226604, 0.25, -0.25, -0.09371936, 0, 0, -0.14652944, 0, 0, -0.09371936, 0.25, -0.25, -0.038226604, 0.25, -0.25, -0.09371936, 0, -0.5, 0.14971095, 0.25, -0.5, 0.08277643, 0, -0.25, -0.09371936, 0, -0.25, -0.038226604, 0.25, -0.5, 0.14971095, 0.25, 0, 0.5002394, 0.75, -0.25, 1, 1, -0.25, 0.63743544, 0.75, 0, 0.5002394, 0.75, 0, 1, 1, -0.25, 1, 1, 0, 0.08277643, 0.5, -0.25, 0.63743544, 0.75, -0.25, 0.14971095, 0.5, 0, 0.08277643, 0.5, 0, 0.5002394, 0.75, -0.25, 0.63743544, 0.75, -0.25, 0.14971095, 0.5, -0.5, 1, 0.75, -0.5, 0.3933136, 0.5, -0.25, 0.14971095, 0.5, -0.25, 0.63743544, 0.75, -0.5, 1, 0.75, 0.5, 0.14971095, 0.25, 0.25, 0.14971095, 0.5, 0.25, -0.038226604, 0.25, 0.5, 0.14971095, 0.25, 0.5, 0.3933136, 0.5, 0.25, 0.14971095, 0.5, 0.5, 0.08277643, 0, 0.25, -0.038226604, 0.25, 0.25, -0.09371936, 0, 0.5, 0.08277643, 0, 0.5, 0.14971095, 0.25, 0.25, -0.038226604, 0.25, 0.25, -0.09371936, 0, 0, -0.09371936, 0.25, 0, -0.14652944, 0, 0.25, -0.09371936, 0, 0.25, -0.038226604, 0.25, 0, -0.09371936, 0.25, 1, 1, 0.25, 0.75, 1, 0.5, 0.75, 0.63743544, 0.25, 1, 1, 0.25, 1, 1, 0.5, 0.75, 1, 0.5, 1, 1, 0, 0.75, 0.63743544, 0.25, 0.75, 0.5002394, 0, 1, 1, 0, 1, 1, 0.25, 0.75, 0.63743544, 0.25, 0.75, 0.5002394, 0, 0.5, 0.14971095, 0.25, 0.5, 0.08277643, 0, 0.75, 0.5002394, 0, 0.75, 0.63743544, 0.25, 0.5, 0.14971095, 0.25, 1, 1, 0.75, 0.75, 1, 1, 0.75, 1, 0.75, 1, 1, 0.75, 1, 1, 1, 0.75, 1, 1, 1, 1, 0.5, 0.75, 1, 0.75, 0.75, 1, 0.5, 1, 1, 0.5, 1, 1, 0.75, 0.75, 1, 0.75, 0.75, 1, 0.5, 0.5, 1, 0.75, 0.5, 0.3933136, 0.5, 0.75, 1, 0.5, 0.75, 1, 0.75, 0.5, 1, 0.75, 0.5, 1, -0.75, 0.25, 0.14971095, -0.5, 0.25, 0.63743544, -0.75, 0.5, 1, -0.75, 0.5, 0.3933136, -0.5, 0.25, 0.14971095, -0.5, 0.5, 1, -1, 0.25, 0.63743544, -0.75, 0.25, 1, -1, 0.5, 1, -1, 0.5, 1, -0.75, 0.25, 0.63743544, -0.75, 0.25, 1, -1, 0, 0.5002394, -0.75, 0, 1, -1, 0.25, 1, -1, 0.25, 0.63743544, -0.75, 0, 0.5002394, -0.75, 1, 1, -0.75, 0.75, 1, -0.5, 0.75, 1, -0.75, 1, 1, -0.75, 1, 1, -0.5, 0.75, 1, -0.5, 1, 1, -1, 0.75, 1, -0.75, 0.75, 1, -1, 1, 1, -1, 1, 1, -0.75, 0.75, 1, -0.75, 0.75, 1, -1, 0.5, 1, -0.75, 0.5, 1, -1, 0.75, 1, -1, 0.75, 1, -0.75, 0.5, 1, -0.75, 1, 1, -0.25, 0.75, 0.5002394, 0, 0.75, 0.63743544, -0.25, 1, 1, -0.25, 1, 1, 0, 0.75, 0.5002394, 0, 1, 1, -0.5, 0.75, 0.63743544, -0.25, 0.75, 1, -0.5, 1, 1, -0.5, 1, 1, -0.25, 0.75, 0.63743544, -0.25, 0.75, 1, -0.5, 0.5, 0.14971095, -0.25, 0.5, 0.3933136, -0.5, 0.75, 1, -0.5, 0.75, 0.63743544, -0.25, 0.5, 0.14971095, -0.25, -0.5, 1, -0.75, -0.75, 1, -0.5, -0.75, 1, -0.75, -0.5, 1, -0.75, -0.5, 0.3933136, -0.5, -0.75, 1, -0.5, -0.5, 1, -1, -0.75, 1, -0.75, -0.75, 1, -1, -0.5, 1, -1, -0.5, 1, -0.75, -0.75, 1, -0.75, -0.75, 1, -1, -1, 1, -0.75, -1, 1, -1, -0.75, 1, -1, -0.75, 1, -0.75, -1, 1, -0.75, 0, 0.5002394, -0.75, -0.25, 0.14971095, -0.5, -0.25, 0.63743544, -0.75, 0, 0.5002394, -0.75, 0, 0.08277643, -0.5, -0.25, 0.14971095, -0.5, 0, 1, -1, -0.25, 0.63743544, -0.75, -0.25, 1, -1, 0, 1, -1, 0, 0.5002394, -0.75, -0.25, 0.63743544, -0.75, -0.25, 1, -1, -0.5, 1, -0.75, -0.5, 1, -1, -0.25, 1, -1, -0.25, 0.63743544, -0.75, -0.5, 1, -0.75, 0, -0.09371936, -0.25, -0.25, -0.09371936, 0, -0.25, -0.038226604, -0.25, 0, -0.09371936, -0.25, 0, -0.14652944, 0, -0.25, -0.09371936, 0, 0, 0.08277643, -0.5, -0.25, -0.038226604, -0.25, -0.25, 0.14971095, -0.5, 0, 0.08277643, -0.5, 0, -0.09371936, -0.25, -0.25, -0.038226604, -0.25, -0.25, 0.14971095, -0.5, -0.5, 0.14971095, -0.25, -0.5, 0.3933136, -0.5, -0.25, 0.14971095, -0.5, -0.25, -0.038226604, -0.25, -0.5, 0.14971095, -0.25, -0.5, 0.14971095, -0.25, -0.75, 0.5002394, 0, -0.75, 0.63743544, -0.25, -0.5, 0.14971095, -0.25, -0.5, 0.08277643, 0, -0.75, 0.5002394, 0, -0.5, 0.3933136, -0.5, -0.75, 0.63743544, -0.25, -0.75, 1, -0.5, -0.5, 0.3933136, -0.5, -0.5, 0.14971095, -0.25, -0.75, 0.63743544, -0.25, -0.75, 1, -0.5, -1, 1, -0.25, -1, 1, -0.5, -0.75, 1, -0.5, -0.75, 0.63743544, -0.25, -1, 1, -0.25, 0.5, 0.14971095, -0.25, 0.25, -0.09371936, 0, 0.25, -0.038226604, -0.25, 0.5, 0.14971095, -0.25, 0.5, 0.08277643, 0, 0.25, -0.09371936, 0, 0.5, 0.3933136, -0.5, 0.25, -0.038226604, -0.25, 0.25, 0.14971095, -0.5, 0.5, 0.3933136, -0.5, 0.5, 0.14971095, -0.25, 0.25, -0.038226604, -0.25, 0.25, 0.14971095, -0.5, 0, -0.09371936, -0.25, 0, 0.08277643, -0.5, 0.25, 0.14971095, -0.5, 0.25, -0.038226604, -0.25, 0, -0.09371936, -0.25, 0.5, 1, 0.75, 0.25, 1, 1, 0.25, 0.63743544, 0.75, 0.5, 1, 0.75, 0.5, 1, 1, 0.25, 1, 1, 0.5, 0.3933136, 0.5, 0.25, 0.63743544, 0.75, 0.25, 0.14971095, 0.5, 0.5, 0.3933136, 0.5, 0.5, 1, 0.75, 0.25, 0.63743544, 0.75, 0.25, 0.14971095, 0.5, 0, 0.5002394, 0.75, 0, 0.08277643, 0.5, 0.25, 0.14971095, 0.5, 0.25, 0.63743544, 0.75, 0, 0.5002394, 0.75, -0.5, 1, 0.75, -0.75, 1, 1, -0.75, 1, 0.75, -0.5, 1, 0.75, -0.5, 1, 1, -0.75, 1, 1, -0.5, 0.3933136, 0.5, -0.75, 1, 0.75, -0.75, 1, 0.5, -0.5, 0.3933136, 0.5, -0.5, 1, 0.75, -0.75, 1, 0.75, -0.75, 1, 0.5, -1, 1, 0.75, -1, 1, 0.5, -0.75, 1, 0.5, -0.75, 1, 0.75, -1, 1, 0.75)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3pn3f"]
-resource_name = "Ice"
-transparency = 4
-cull_mode = 2
-albedo_color = Color(0.3761738, 0.73354644, 0.79113406, 0.95)
-roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_y5pyf"]
 _surfaces = [{
@@ -68,7 +60,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_aheb3"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_anwyr"]
 resource_name = "ice_InwardIce_cell_006"
 _surfaces = [{
 "aabb": AABB(-2.279576, -0.6270498, -3.5318453, 5.664391, 1, 5.546658),
@@ -77,7 +69,7 @@ _surfaces = [{
 "index_count": 150,
 "index_data": PackedByteArray("JgAAACcAKAAAACYAKAABAAAAAAABAAIAAQAoAAMAKQAFAAYAKgAFACkAKgAEAAUABQAEAAcACAAJAAoACAALAAkADAANAA4ADQAMAA8ADQAPABAAKwAsAC0ALAArABgALAAYAC4ALwAwADEALwAyADAAEgAzADQANAAzADUAHAAdAB4ANgAdABwAHQA2ADcAHQA3ADgAHQA4AB8AOQA6ADsAOQA8ADoAGQAaABsAPQAaABkAGgA9AD4AGgA+AD8AQABBABUAFwBCAEMAFwAWAEIAEwBEABEAEwBFAEQAFABGAEcARgAUAEgASAAUAEkARgBIAEoASwBMAE0ASwBOAEwATwBQAFEATwBSAFAAIAAhACIAUwAhACAAIQBTACQAJABTACMAIQAkACUA"),
 "lods": [0.4422235, PackedByteArray("AAABAAIAAwABAAAABAAFAAYABQAEAAcACAAJAAoACAALAAkADAANAA4ADQAMAA8ADQAPABAAEQASABMAEwAUABEAEwAVABQAFgAUABUAFwAWABUAEQAUABgAGQARABgAGQAYABoAGQAaABsAHAAdAB4AHQAcAB8AIAAhACIAIwAhACAAIQAjACQAIQAkACUA")],
-"material": SubResource("StandardMaterial3D_3pn3f"),
+"material": SubResource("StandardMaterial3D_ti3oq"),
 "name": "Ice",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -87,7 +79,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_y5pyf")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_40bjk"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3pn3f"]
 points = PackedVector3Array(-2.084769, -0.6270498, -3.3407845, -2.1433258, 0.3729502, -3.3984263, 3.4297705, -0.1325395, 0.7385825, -2.3245316, 0.40692627, 1.6379211, -2.084769, -0.6270498, 1.4393772, 3.190008, -0.6270498, 0.45030808, -0.60985583, 0.3658314, -3.3610528, -0.60085076, -0.6270498, -3.3407845, 0.83535063, 0.2918896, -1.6995085, 0.040084988, -0.5598189, 1.9483094, -1.784925, 0.40692627, 1.7271895, 3.2489629, -0.042663738, 0.3781817, 0.01357609, 0.04721202, 2.0875902, -0.024115656, -0.6270498, 1.8515738, 3.0332017, -0.56007016, 0.7514004, -0.07654613, 0.1371934, 1.9972129, 3.2489629, -0.042663738, 0.4691136)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yl68e"]
@@ -105,7 +97,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_anwyr"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_52q1h"]
 resource_name = "ice_InwardIce_cell_007"
 _surfaces = [{
 "aabb": AABB(-2.8538046, -0.53378224, -3.578699, 5.3790255, 1, 8.170198),
@@ -114,7 +106,7 @@ _surfaces = [{
 "index_count": 312,
 "index_data": PackedByteArray("AgBFAAEAAABFAAIARQAAAEYARgAAAAMARQBGAEcASAAEAAcABABIAEkASQBIAEoABABJAAUABAAFAAYASwAIAAsATAAIAEsACABMAE0ACABNAAkACAAJAAoADAANAA4ATgANAAwATwANAE4ATwBOAFAADQBPADEAMQBPADAAMQAwADIADQAxADMADQAzAA8AEAARABIAEQAQAFEAUQAQABMAEQBRAFIAUwAVABYAFQBTABQAFQAUABcAGABUABoAGAA0AFQANAAYABsANAAbABkAHAAdAB4AHAAfAB0AHQAfACAAHwAcACEAIQAcACIAHwAhACMAVQBWAFcAVQBYAFYAQgBZAFoAQgBbAFkAXABdAF4AXABfAF0AYABhAGIAYABjAGEAZABlAGYAZABnAGUAQABoAGkAaABAAGoAaABqAGsAbABtAG4AbQBsAG8AbQBvAHAAcQA4AHIAcQA3ADgAcwB0AHUAcwB2AHQAdwBBAHgAdwB5AEEAKwB6AHsAegArAHwAegB8AH0AfgB/AIAAfwB+ADkAfwA5AIEAggCDAIQAggCFAIMAJQCGAIcAJQCIAIYAiQCKAIsAigCJAIwAigCMAI0AjgCPADYAjwCOAJAAjwCQADUAJwCRAJIAJwCTAJEAKQCUAJUAKQCWAJQAJACXAJgAlwAkAJkAlwCZAJoAmwAoAJwAKACbAJ0AKACdAJ4AnwCgAKEAoACfAKIAoACiAKMAJgCkAKUAJgCmAKQAKgA7ADoAKgA8ADsAPQCnAKgApwA9AD4ApwA+AD8ALAAtAC4AqQAtACwALQCpAEMALQBDAEQALQBEAC8A"),
 "lods": [0.10644523, PackedByteArray("AAABAAIAAQAAAAMABAAFAAYABAAHAAUACAAJAAoACQAIAAsADAANAA4AMAANAAwADQAwADEAMQAwADIADQAxADMADQAzAA8AEAARABIAEQAQABMAFAAVABYAFQAUABcANAAbABkANAAYABsAGAA0ABoAHAAdAB4AHAAfAB0AHQAfACAAHwAcACEAIQAcACIAHwAhACMAJAA1ADYAJAAlADUANgAoACQANgAnACgAJQA3ADUAJQAmADcANQA4ADYANQA3ADgANwAmADkANwA5ADgAJgArADkAOQArADoAOQA6ADsAOAA5ADsAKgA7ADoAKgA8ADsAPQA7ADwAOwA9AD4AOwA+AD8AOAA7AD8AQAA/AD4AOAA/AEEAPwBAAEEANgA4AEEAQQBAACkANgBBAEIAQQApAEIALAAtAC4AQwAtACwALQBDAEQALQBEAC8A"), 1.0124229, PackedByteArray("AAABAAIAAQAAAAMABAAFAAYABAAHAAUACAAJAAoACQAIAAsADAANAA4ADQAMAA8AEAARABIAEQAQABMAFAAVABYAFQAUABcAGAAZABoAGQAYABsAHAAdAB4AHAAfAB0AHQAfACAAHwAcACEAIQAcACIAHwAhACMAJAAlACYAJwAkACYAJAAnACgAJwAmACkAJgAqACkAJgArACoALAAtAC4ALQAsAC8A")],
-"material": SubResource("StandardMaterial3D_3pn3f"),
+"material": SubResource("StandardMaterial3D_ti3oq"),
 "name": "Ice",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -124,7 +116,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yl68e")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3pn3f"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cyto1"]
 points = PackedVector3Array(-2.3362284, -0.478904, -2.0764344, 2.3171282, -0.53378224, -0.38898835, -2.757271, 0.46621773, 4.544358, -2.6857963, -0.53378224, 4.314596, 2.5255833, -0.00807244, -3.6191456, -0.06337442, 0.47738087, 4.550371, -2.8130808, 0.15374532, -1.9198215, 0.0017576098, -0.53378224, 4.2392964, 2.3171282, -0.53378224, -3.301796, -2.3276515, 0.47738087, 2.3664489, -2.6857963, -0.53378224, -1.7331891, 2.5255833, -0.00807244, -0.5443704, 0.72175896, -0.48187903, -3.2761989, -2.811388, -0.087541595, 4.5057955, 0.5032253, -0.00807244, -3.2952724, 0.09843543, 0.47738087, 4.0649652, -2.8130808, 0.47738087, 2.6903222, -2.4894614, 0.15374532, -2.0813541, -0.14454462, 0.47738087, 4.6319456, -0.072679006, -0.53378224, 4.314596, -2.728196, -0.47895372, -1.9196345, 2.1395075, -0.48177204, -3.512062)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wxcgm"]
@@ -142,7 +134,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_52q1h"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_mj8rq"]
 resource_name = "ice_InwardIce_cell_001"
 _surfaces = [{
 "aabb": AABB(-5.401785, -0.65871143, -1.803478, 10.498812, 1, 4.1651583),
@@ -151,7 +143,7 @@ _surfaces = [{
 "index_count": 168,
 "index_data": PackedByteArray("JwAAAAUAAwAAACcAAAADAAEAAQADAAQAAAABAAIAKAApACoAKAAGACkAKQAGAAkABgAoAAcABgAHAAgACgALAAwACgArAAsACgAsACsALAAKAC0ALQAKAC4ALgAKAA0ADQAKAA4ADwAQABEADwASABAAEwAUABUAFAATABYAFAAWABcAGAAvADAAGAAxAC8AMgAzADQANQA2ADcANQA4ADYAOQA6ADsAOgA5ADwAOgA8AD0APgA/AEAAPgBBAD8AQgBDAEQAQgBFAEMARgAjACYARwAjAEYAIwBHACQAJABHAEgAIwAkACUAHAAdABsASQBKAEsASQBMAEoATQAaAE4ATQBPABoAGQBQAFEAGQBSAFAAUwAhAFQAUwAiACEAHwBVAFYAHwBXAFUAWABZAFoAWQBYAFsAWQBbAFwAHgBdAF4AXQAeACAAXQAgAF8A"),
 "lods": [1.1375102, PackedByteArray("AAABAAIAAAADAAEAAQADAAQAAwAAAAUABgAHAAgABwAGAAkACgALAAwACwAKAA0ADQAKAA4ADwAQABEADwASABAAEwAUABUAFAATABYAFAAWABcAGAAZABoAGQAbABoAHAAdABsAHgAaABsAHgAfABoAHwAeACAAIQAaAB8AIgAhAB8AIwAkACUAIwAmACQA")],
-"material": SubResource("StandardMaterial3D_3pn3f"),
+"material": SubResource("StandardMaterial3D_ti3oq"),
 "name": "Ice",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -161,7 +153,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wxcgm")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cyto1"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i6d35"]
 points = PackedVector3Array(0.43175945, -0.20549314, 2.0820758, -5.0358405, -0.65871143, -1.680445, -5.1919937, 0.34128857, -1.7433903, 4.8872356, 0.34128857, -1.7433903, 4.7310824, -0.65871143, -1.680445, -1.2499149, -0.65871143, 2.2566097, -3.801192, 0.3665632, -0.03965223, 3.1691494, 0.3665632, 0.041759536, -1.3413762, -0.12566496, 2.4206536, 0.64209193, -0.65871143, 1.9537, 4.5790725, -0.65871143, -1.3016151, 1.0355828, -0.04362694, 1.8457611, -4.0121393, -0.5174351, -0.41382694, 4.8872356, 0.34128857, -1.5087448, -5.181527, 0.26224723, -1.5831982, 0.7901191, -0.04362694, 2.0102546)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ggudj"]
@@ -179,7 +171,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_mj8rq"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_jpsld"]
 resource_name = "ice_InwardIce_cell_002"
 _surfaces = [{
 "aabb": AABB(-2.7114456, -0.6737366, -3.0631373, 5.3270483, 1, 5.2555156),
@@ -188,7 +180,7 @@ _surfaces = [{
 "index_count": 150,
 "index_data": PackedByteArray("AAABAAIAJgABAAAAJwABACYAAQAnABkAAQAZABoAAQAaACgAKAAaACkAAQAoAAMABQAbAAcABQASABsABQAqABIAKgAFAAQABAAFAAYACAAJAAoAEwArACwAEwAUACsAFgAjACEAFgALACMAHwAtAC4AHwAeAC0ADAAcAC8AHAAMADAAHAAwADEAMgAzAB0AIAA0ADUANAAgADYANAA2ADcAOAA5ADoAOAANADkAOwA8AD0APgAiAD8APwAiAEAAQQBCAEMAQQBEAEIAFQBFAEYARQAVAEcARwAVAEgARQBHAEkASgBLAEwASwBKAE0ASwBNAE4ADgAPABAAFwAPAA4AGAAXACUATwAXABgATwAPABcADwBPACQADwAkAFAADwBQAFEADwBRABEA"),
 "lods": [0.06843619, PackedByteArray("AAABAAIAGQABAAAAAQAZABoAAQAaAAMABQAbAAcABQASABsAEgAFAAQABAAFAAYACAAJAAoAEwAUABwADAAcABQAHAAMAB0AHgAcAB0AHAAeAB8AHAAfABMAHwAeAA0ADQAgAB8AIAATAB8AIAAVABMAIQAUABMAEwAVACEAFQAiACEAIQAjABQAIQAiABYAFgAjACEAFgALACMADgAPABAAFwAPAA4AJAAPABcADwAkABEAJAAXABgAGAAXACUA"), 0.31686303, PackedByteArray("AAABAAIAAQAAAAMABQASAAcAEgAFAAQABAAFAAYACAAJAAoADAATABQAEwAMAA0AFQATAA0AEwAVABYAFgAUABMAFgALABQADgAPABAAFwAPAA4AGAAPABcADwAYABEA"), 1.1114137, PackedByteArray("AAABAAIAAQAAAAMABAAFAAYABwAFAAQACAAJAAoACwAMAA0ADgAPABAADwAOABEA")],
-"material": SubResource("StandardMaterial3D_3pn3f"),
+"material": SubResource("StandardMaterial3D_ti3oq"),
 "name": "Ice",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -198,7 +190,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ggudj")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i6d35"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ec0e6"]
 points = PackedVector3Array(-0.13161695, -0.124219805, -3.1054153, -2.7537236, 0.38321745, 2.221633, -2.4673495, -0.6737366, 2.0167465, 2.449742, -0.6737366, 2.0167465, 1.7276951, 0.38321745, 0.361129, 0.10806031, -0.6737366, -2.8220718, 2.5731258, 0.38321745, 2.221633, -2.7537236, 0.38321745, 2.0521643, -2.4622712, -0.6726717, 1.8554816, -0.12505282, -0.67290914, -2.8181899, 2.4493966, -0.6736664, 1.8599955, 0.036303826, -0.124219805, -3.1054153, 1.5581851, 0.38321745, 0.27665544, 1.7276951, 0.29864457, 0.27665544, -2.2462533, 0.21407169, 1.0374389, -2.6689687, 0.38321745, 1.967691)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_c0xvs"]
@@ -216,7 +208,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_jpsld"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_tpcvv"]
 resource_name = "ice_InwardIce_cell_003"
 _surfaces = [{
 "aabb": AABB(-2.1955304, -0.6906824, -6.32395, 4.4801297, 1, 11.873741),
@@ -225,7 +217,7 @@ _surfaces = [{
 "index_count": 228,
 "index_data": PackedByteArray("AAABAAIAKwABAAAALAABACsALQABACwAAQAtAC4AAQAuAC8AAQAvAAMALwAuADAALwAwAB4ABwAxAAQABQAxAAcAMQAFAB8AHwAFAAYAMQAfADIACQAzAAsACQA0ADMACQAgADQAIAAJACEAIQAJADUANQAJAAgACAAJAAoADAANAA4ADAAPAA0AEAARABIAEQAQABMAEQATABQANgA3ADgANgA5ADcAOgA7ADwAOwA6AD0AOwA9AD4AFQAWABcAFgAVAD8APwAVACIAFgA/AEAAFgBAABgAQQBCAEMAQQBEAEIARQAlAEYAJQBFAEcAJQBHAEgAGwBJAEoASQAbAEsASQBLAEwAIwBNAE4AIwBPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAHABYAFkAHAAkAFgAJAAcABoAJAAaAFoAJgBbAFwAWwAmAF0AXQAmAF4AWwBdAF8AYABhAGIAGQBjACoAYwAZAGQAYwBkAGUAZgBnAGgAZgAnAGcAaQBqAGsAaQBsAGoAbQBuAG8AbQBwAG4AcQAoAHIAcQBzACgAKQB0AHUAdAApAHYAdgApAB0AdAB2AHcAeAB5AHoAegB5AHsA"),
 "lods": [0.26911023, PackedByteArray("AAABAAIAHgABAAAAAQAeAAMAHwAFAAYABAAFAB8ABQAEAAcACQAgAAsAIAAJACEAIQAJAAgACAAJAAoADAANAA4ADAAPAA0AEAARABIAEQAQABMAEQATABQAFQAWABcAFgAVACIAFgAiABgAIwAkACUAHAAkACMAJAAcABoAJAAaACYAJAAmACUAJwAjACUAGwAlACYAJwAlACgAJQAbACgAGQAnACgAGwApACgAKgAZACgAKAApAB0AKAAdACoA"), 2.2764816, PackedByteArray("AAABAAIAAQAAAAMABAAFAAYABQAEAAcACAAJAAoACwAJAAgADAANAA4ADAAPAA0AEAARABIAEQAQABMAEQATABQAFQAWABcAFgAVABgAGQAaABsAHAAaABkAGQAbAB0A")],
-"material": SubResource("StandardMaterial3D_3pn3f"),
+"material": SubResource("StandardMaterial3D_ti3oq"),
 "name": "Ice",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -235,7 +227,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c0xvs")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ec0e6"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q8i8v"]
 points = PackedVector3Array(-2.1481838, -0.07818506, -2.7886405, 2.3743644, 0.393032, 5.5957384, 1.3379658, 0.393032, 5.5969095, 2.1820078, -0.6906824, 5.0971704, 2.3743644, 0.393032, -6.371067, 2.1820078, -0.6906824, -5.872401, -2.04984, -0.6906824, 0.34637353, -0.5459019, 0.393032, 3.8994153, 0.36812195, -0.6906824, 5.0982437, -2.04984, -0.6906824, -2.502601, 0.48959255, 0.393032, -4.957075, -2.2421966, -0.1723842, 0.413051, 0.3011154, 0.393032, 5.5969095, 1.6641097, -0.6906824, -5.612526, -2.2421966, -0.07818506, -2.694921, 2.1863391, 0.393032, -6.371067)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xp2qa"]
@@ -253,7 +245,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_tpcvv"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_4f2ed"]
 resource_name = "ice_InwardIce_cell_004"
 _surfaces = [{
 "aabb": AABB(-1.3937274, -0.7246502, -2.8470607, 2.2686985, 1, 6.899188),
@@ -262,7 +254,7 @@ _surfaces = [{
 "index_count": 138,
 "index_data": PackedByteArray("AAABAAIAIgABAAAAIgAAABkAAQAiABoAGgAiABgAGgAYACMAAQAaACQAJAAaACUAAQAkAAMABAAFAAYAJgAFAAQABQAmACcABQAnABsABQAbAAcACAAJAAoACAALAAkADAANAA4ADAAPAA0AKAAdAB4AHQAoABEAEQAoABwAHQARABIAKQAqABAAKgApACsAKgArACwAIAAtAC4AIAAvAC0AMAAxADIAMQAwADMAMQAzADQANQA2ADcANQAhADYANgAhADgAOQA6ADsAOQA8ADoAPQA+AD8APgA9ABMAPgATAEAAFABBABYAFABCAEEAFABDAEIAQwAUABUAFQAUABcARAAfAEUAHwBEAEYAHwBGAEcA"),
 "lods": [0.15340935, PackedByteArray("AAABAAIAGAABAAAAGAAAABkAAQAYABoAAQAaAAMABAAFAAYABQAEABsABQAbAAcACAAJAAoACAALAAkADAANAA4ADAAPAA0AHAAdAB4AHwAcAB4AHQAcABEAHQARABIAIAAfAB4AIAAeAB0AHwAgACEAEwAhACAAEwAgAB0AEwAdABAAFAAVABYAFQAUABcA"), 0.85137063, PackedByteArray("AAABAAIAAwABAAAABAAFAAYABQAEAAcACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEwARABAAFAAVABYAFQAUABcA")],
-"material": SubResource("StandardMaterial3D_3pn3f"),
+"material": SubResource("StandardMaterial3D_ti3oq"),
 "name": "Ice",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -272,7 +264,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xp2qa")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q8i8v"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g3d8k"]
 points = PackedVector3Array(-1.1567292, -0.7246502, -2.649284, 0.8731541, 0.25616753, 3.9548883, 0.84152365, -0.080558285, 3.8609273, -1.3937274, 0.2605133, 3.98415, -0.8760047, 0.2757321, -2.8119838, 0.77480376, -0.7246502, -2.26286, -1.3500326, -0.7246502, 3.8543506, 0.77480376, -0.7246502, 3.8543506, 0.848387, -0.00041101873, -2.467531, -1.3937274, 0.2605133, -2.7790833, -1.3500326, -0.7246502, -2.649284, -0.3242452, 0.20664567, -2.6742027)
 
 [node name="InwardIce" type="Node3D"]
@@ -282,75 +274,76 @@ script = ExtResource("1_aheb3")
 
 [node name="InwardIce" type="MeshInstance3D" parent="Static"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 0, 0)
-mesh = SubResource("ArrayMesh_40bjk")
+mesh = SubResource("ArrayMesh_aheb3")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Static/InwardIce"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/InwardIce/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_anwyr")
+shape = SubResource("ConcavePolygonShape3D_40bjk")
 
 [node name="Dynamic" type="Node3D" parent="."]
+visible = false
 
 [node name="InwardIce_cell" type="RigidBody3D" parent="Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.720424, 0.1270498, -2.4681547)
 
 [node name="InwardIce_cell" type="MeshInstance3D" parent="Dynamic/InwardIce_cell"]
-mesh = SubResource("ArrayMesh_aheb3")
+mesh = SubResource("ArrayMesh_anwyr")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dynamic/InwardIce_cell"]
-shape = SubResource("ConvexPolygonShape3D_40bjk")
+shape = SubResource("ConvexPolygonShape3D_3pn3f")
 
 [node name="InwardIce_cell_001" type="RigidBody3D" parent="Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97002167, 0.033782274, 1.4085013)
 
 [node name="InwardIce_cell_001" type="MeshInstance3D" parent="Dynamic/InwardIce_cell_001"]
-mesh = SubResource("ArrayMesh_anwyr")
+mesh = SubResource("ArrayMesh_52q1h")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dynamic/InwardIce_cell_001"]
-shape = SubResource("ConvexPolygonShape3D_3pn3f")
+shape = SubResource("ConvexPolygonShape3D_cyto1")
 
 [node name="InwardIce_cell_002" type="RigidBody3D" parent="Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9029727, 0.15871143, -4.1965218)
 
 [node name="InwardIce_cell_002" type="MeshInstance3D" parent="Dynamic/InwardIce_cell_002"]
-mesh = SubResource("ArrayMesh_52q1h")
+mesh = SubResource("ArrayMesh_mj8rq")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dynamic/InwardIce_cell_002"]
-shape = SubResource("ConvexPolygonShape3D_cyto1")
+shape = SubResource("ConvexPolygonShape3D_i6d35")
 
 [node name="InwardIce_cell_003" type="RigidBody3D" parent="Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5631757, 0.17373654, 3.8076217)
 
 [node name="InwardIce_cell_003" type="MeshInstance3D" parent="Dynamic/InwardIce_cell_003"]
-mesh = SubResource("ArrayMesh_mj8rq")
+mesh = SubResource("ArrayMesh_jpsld")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dynamic/InwardIce_cell_003"]
-shape = SubResource("ConvexPolygonShape3D_i6d35")
+shape = SubResource("ConvexPolygonShape3D_ec0e6")
 
 [node name="InwardIce_cell_004" type="RigidBody3D" parent="Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7154007, 0.19068241, 0.4502089)
 
 [node name="InwardIce_cell_004" type="MeshInstance3D" parent="Dynamic/InwardIce_cell_004"]
-mesh = SubResource("ArrayMesh_jpsld")
+mesh = SubResource("ArrayMesh_tpcvv")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dynamic/InwardIce_cell_004"]
-shape = SubResource("ConvexPolygonShape3D_ec0e6")
+shape = SubResource("ConvexPolygonShape3D_q8i8v")
 
 [node name="InwardIce_cell_005" type="RigidBody3D" parent="Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6062727, 0.2246502, 1.9478725)
 
 [node name="InwardIce_cell_005" type="MeshInstance3D" parent="Dynamic/InwardIce_cell_005"]
-mesh = SubResource("ArrayMesh_tpcvv")
+mesh = SubResource("ArrayMesh_4f2ed")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dynamic/InwardIce_cell_005"]
-shape = SubResource("ConvexPolygonShape3D_q8i8v")
+shape = SubResource("ConvexPolygonShape3D_g3d8k")
 
 [node name="ResetTimer" type="Timer" parent="."]
 wait_time = 10.0
